@@ -1,0 +1,25 @@
+
+select sum(turnover) from users;
+select sum(number_of_canditates) from batch;
+
+select tp_name, bid from training_partner UNION select ab_name,bid from assessment_body;
+select bid from training_partner UNION select bid from assessment_body;
+
+SELECT assessment_body.bid
+FROM assessment_body
+WHERE assessment_body.bid IN (SELECT batch.batch_id FROM batch);
+
+SELECT users.user_name from users where users.user_name IN (SELECT application_info.user_name from application_info);
+
+SELECT batch.batch_id
+FROM batch
+WHERE batch.batch_id NOT IN (SELECT assessment_body.bid FROM assessment_body);
+
+SELECT users.user_name from users where users.user_name  NOT IN (SELECT application_info.user_name from application_info);
+
+SELECT application_date FROM application_info WHERE application_date < ALL (SELECT join_date FROM training_partner);
+SELECT application_date FROM application_info WHERE application_date < ALL (SELECT start_date FROM batch);
+
+SELECT * FROM training_partner WHERE EXISTS (SELECT * FROM batch WHERE batch.batch_id = training_partner.bid);
+
+SELECT * FROM users WHERE EXISTS (SELECT * FROM application_info WHERE users.user_name = application_info.user_name);
