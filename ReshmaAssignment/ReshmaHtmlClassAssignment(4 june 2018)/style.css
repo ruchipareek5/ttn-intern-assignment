@@ -1,0 +1,52 @@
+
+.header{
+	background-color: #20c997;
+	width: 100vw;
+	height: 15vh;
+}
+.transDiv{
+	opacity: 0.5;
+	background-color: black;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+}
+
+.image{
+
+	background-color: #20c997;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+}
+.sticky{
+	padding: 0.5rem;
+	background-color: #20c997;
+	float: right;
+	top:0;
+	position: sticky;
+	writing-mode: tb-rl;
+	font-size: 1rem;
+}
+.imagePart{
+	overflow:hidden;
+	width: 100vw;
+}
+.part2{
+	width: 32vw;
+}
+.footer{
+	margin-top: 1rem;
+	background-color: #20c997;
+	width: 100vw;
+	height: 5vh;
+}
+.text{
+
+	border: solid 2px #20c997;
+	float: left;
+	display: inline-block;
+	width: 32vw;
+	
+}
