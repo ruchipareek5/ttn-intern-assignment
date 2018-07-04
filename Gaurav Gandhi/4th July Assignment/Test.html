@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Web</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		img {
+  			height: 50%;
+    		-webkit-filter: blur(5px);
+			-moz-filter: blur(5px);
+			-o-filter: blur(5px);
+			-ms-filter: blur(5px);
+			filter: blur(5px);
+			z-index: -20;
+			}
+		body{
+			background: url('img.jpg') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			color:#fff;
+			/*-webkit-filter: blur(5px);
+			-moz-filter: blur(5px);
+			-o-filter: blur(5px);
+			-ms-filter: blur(5px);
+			filter: blur(5px);*/
+			}
+		.fixed-nav
+		{
+			position: fixed; /* Set the navbar to fixed position */
+    		top: 0; /* Position the navbar at the top of the page */
+    		width: 100%; /* Full width */
+		}
+
+		#mySidenav a 
+		{
+		    position: fixed;
+		    right: -80px;
+		    transition: 0.3s;
+    		padding: 15px;
+  		  	width: 100px;
+ 	 		text-decoration: none;
+    		font-size: 20px;
+    		color: white;
+    		border-radius: 0 5px 5px 0;
+		}
+
+		#mySidenav a:hover
+		{
+    		right: 0;
+		}
+#about {
+    top: 200px;
+    background-color: #4CAF50;
+}
+
+#blog {
+    top: 260px;
+    background-color: #2196F3;
+}
+
+#projects {
+    top: 320px;
+    background-color: #f44336;
+}
+
+#contact {
+    top: 380px;
+    background-color: #555
+}
+
+	</style>
+</head>
+<body>
+	<div>
+		<nav class="navbar navbar-inverse fixed-nav">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#" style="color:white;font-weight:10">Test Web</a>
+   				</div>
+ 		 	</div>
+		</nav>
+	</div>
+	<!--
+	<div style="height:50%;background-size:cover">
+		<img src="img2.jpg">
+	</div>
+	-->
+	<div id="mySidenav" class="sidenav">
+  		<a href="#" id="about">About</a>
+  		<a href="#" id="blog">Blog</a>
+  		<a href="#" id="projects">Projects</a>
+  		<a href="#" id="contact">Contact</a>
+  	</div>
+</body>
+</html>

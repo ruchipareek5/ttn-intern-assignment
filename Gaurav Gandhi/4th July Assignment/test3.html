@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Test 3
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<style type="text/css">
+		.headerClass
+		{
+			position: fixed;
+			width: 100%;
+			background: black;
+		}
+		#header
+		{
+			color: white;
+			padding-top: 2%;
+			padding-left: 2%;
+			padding-bottom: 2%;
+		}
+		#logo
+		{
+			height: 20vh;
+			width: 20vh;
+			padding-left: 2%; 
+		}
+		.imageDiv
+		{
+			width: 100%;
+			height: 10vh;
+			padding-top: 15vh;
+		}
+		#ofc1
+		{
+			width: 100%;
+			height: 50vh;
+		}
+		.centered
+		{
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+   			transform: translate(-50%, -50%);
+		}
+		.ourTeam
+		{
+			width: 100%;
+			height: 10vh;
+			padding-top: 40vh;
+		
+		}
+		.teamPics
+		{
+
+		}
+		.card {
+		    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    		transition: 0.3s;
+    		width: 40%;
+		}
+
+		.card:hover {
+    		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+
+		.container {
+		    padding: 2px 16px;
+		}
+		a.button {
+    	    background: #E1701D no-repeat 88% center;
+    	    font-family: "Arial Black", Gadget, sans-serif;
+    	    font-size: 15px;
+    	    color: white;
+    	    text-transform: uppercase;
+    	    padding: 0 10px;
+    	    outline: none;
+    	    text-decoration: none;
+    	    position: absolute; 
+    	    top: 750px;
+    	    right: 0;
+    	    /*width: 136px;*/
+    	    height: 40px;
+    	    line-height: 45px;
+			-webkit-transform-origin:100% 100%;
+			-moz-transform-origin:100% 100%;
+			transform-origin:100% 100%;
+    	    -webkit-transform: rotate(-90deg);
+    	    -moz-transform: rotate(-90deg);
+    	    transform: rotate(-90deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<div class="headerClass">
+			<header  id="header">
+				<img src="logo.png" id="logo">
+			</header>
+		</div>
+		<div class="imageDiv">
+			<div >
+				<img src="ofc1.jpg" id="ofc1">
+				<div class="centered">
+				</div>
+			</div>
+		</div>
+		<div class="ourTeam">
+			<center><h1>Our Team</h1></center>
+			<div class="card">
+				<img src="team1.jpg" alt="Avatar" style="width:100%">
+  				<div class="container">
+  					<h4><b>Team 1</b></h4> 
+  					<p>Architect & Engineer</p> 
+  				</div>
+  			</div>
+  			<div class="card">
+				<img src="team2.jpg" alt="Avatar" style="width:100%">
+  				<div class="container">
+  					<h4><b>Team 2</b></h4> 
+  					<p>Deligates</p> 
+  				</div>
+  			</div>
+  			<div class="card">
+				<img src="team3.jpg" alt="Avatar" style="width:100%">
+  				<div class="container">
+  					<h4><b>Team 3</b></h4> 
+  					<p>Designers</p> 
+  				</div>
+  			</div>
+
+		</div>
+	</div>
+	<a href="#" class="button">ENTER WOODLAND</a>
+	<footer>
+		<center><p>Copyright. Gaurav Gandhi</p></center>
+	</footer>
+</body>
+</html>

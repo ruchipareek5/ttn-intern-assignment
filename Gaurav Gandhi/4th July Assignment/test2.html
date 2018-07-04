@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Test2
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.mainDiv
+		{
+			background-image:url("img.jpg");
+			background-size: cover;
+			height: 100vh;
+			width: 100vw;
+			z-index: -100;
+			position: fixed; /* Set the navbar to fixed position */
+
+		}
+		.fixed-nav
+		{
+			position: fixed; /* Set the navbar to fixed position */
+    		top: 0; /* Position the navbar at the top of the page */
+    		width: 100%; /* Full width */
+		}
+
+		.ironMan
+		{
+			height: 500px;
+			width: 100%;
+			top: 50%;
+			z-index: 1;
+		}
+		.navDiv
+		{
+			z-index: 10;
+		}
+	</style>
+</head>
+<body>
+	<div class="mainDiv">
+	
+		<div class="navDiv">
+			<nav class="navbar navbar-inverse fixed-nav">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#" style="color:white;font-weight:10">Test Web</a>
+   					</div>
+ 		 		</div>
+			</nav>		
+		</div>
+	</div>
+		<div class="ironMan">
+			<img src="img2.jpg" height="300px" width="80%" style="top:20%;right:10%;left: 10% ;position: absolute;">
+		</div>
+
+</body>
+
+</html>
