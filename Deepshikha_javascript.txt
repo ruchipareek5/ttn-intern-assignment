@@ -1,0 +1,74 @@
+var array = [1,2,3,4,5,87,54,6,22,41,10,12,15,25,28,100,18,49,99,13];
+undefined
+array;
+(20) [1, 2, 3, 4, 5, 87, 54, 6, 22, 41, 10, 12, 15, 25, 28, 100, 18, 49, 99, 13]
+var filterarray = array.filter(function(array){return array>20});
+undefined
+filterarray;
+(9) [87, 54, 22, 41, 25, 28, 100, 49, 99]
+var internarray[30];
+VM174:1 Uncaught SyntaxError: Unexpected token [
+var internarray(30);
+VM176:1 Uncaught SyntaxError: Unexpected token (
+for(i=0;i>30;i++){var intern[i] = prompt("Please enter your name", " ");}
+VM192:1 Uncaught SyntaxError: Unexpected token [
+var intern = prompt("Please enter your name", "Deepshikha");
+undefined
+intern;
+"Deepshikha"
+var intern = prompt("Please enter your name", " ");
+undefined
+intern;
+"deepshikha"
+var intern = new Array(30);
+undefined
+intern;
+(30) [empty × 30]
+for(i=0;i<30;i++){intern[i] = prompt("Please enter your name", "");}
+null
+intern;
+(30) ["deepshikha", "deepika", "souvik", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+var obj1,obj2;
+undefined
+obj1 = {
+    "food":[ "pasta", "pizza", "noodles" ]
+};
+{food: Array(3)}
+obj2 = {
+    "price":[ "120", "340", "100" ]
+};
+{price: Array(3)}
+for (i = 0; i < obj1.food.length; i++) {
+    console.log(obj1.food[i] +obj2.price[i] + "<br>");
+}
+
+VM305:2 pasta120<br>
+VM305:2 pizza340<br>
+VM305:2 noodles100<br>
+undefined
+for (i = 0; i < obj1.food.length; i++) {
+    console.log(obj1.food[i] + " " + obj2.price[i] + "<br>");
+}
+
+VM306:2 pasta 120<br>
+VM306:2 pizza 340<br>
+VM306:2 noodles 100<br>
+undefined
+for (i = 0; i < obj1.food.length; i++) {
+    console.log(obj1.food[i] + " " + obj2.price[i] );
+}
+
+VM307:2 pasta 120
+VM307:2 pizza 340
+VM307:2 noodles 100
+undefined
+var select = prompt("Please select your food " +for (i = 0; i < obj1.food.length; i++) {
+    console.log(obj1.food[i] + " " + obj2.price[i] );
+}, " ");
+
+VM325:1 Uncaught SyntaxError: Unexpected token for
+var select = prompt("Please select your food ", " ");
+
+undefined
+select;
+"pasta"
