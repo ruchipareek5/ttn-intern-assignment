@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Surbhi Garg JS Assignment Q1</title>
+</head>
+
+<body>
+	<h2>Original array</h2>
+	<p id="original"> </p>
+	<h2>values greater than 20</h2>
+	<p id="valuegt"> </p>
+	<script type="text/javascript">
+		function printArray()
+		{
+			var values=new Array(1,2,3,4,5,30,25,12,11,20,21,13,10,24,15,16,17,18,19,45);
+			var result=values.filter(value=>value>20);
+			document.getElementById("valuegt").innerHTML=result.join(" ");
+			document.getElementById("original").innerHTML=values.join(" ");
+		}
+		printArray();
+	 
+	</script>
+</body>
+</html>

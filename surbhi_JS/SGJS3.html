@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Surbhi Garg JS Assignment Q3t</title>
+</head>
+<body>
+<script>
+	var menu={"menuitems":[
+		{"name":"Momos","price": 100},
+		{"name":"Noodles","price": 200},
+		{"name":"Chilli Potato","price": 90}
+		
+	]}
+	for(i=0;i<menu.menuitems.length;i++)
+	{
+		var menuobj=JSON.stringify(menu.menuitems[i]);
+		document.writeln(menuobj);
+		document.writeln("<br>");
+	}
+	var useroption;
+	do
+	{
+		useroption=prompt("Enter item number");
+		var i;
+		var flag=false;
+		for(i=0;i<menu.menuitems.length;i++)
+		{
+			if(useroption==i)
+			{
+				document.writeln("Item selected is:");
+				var selitem=JSON.stringify(menu.menuitems[i]);
+				document.writeln(selitem);
+				flag=true;
+			}		
+		}
+		if(flag==false)
+		document.writeln("Invalid item number");
+	}while(useroption!=null)
+</script>
+</body>
+</html>
