@@ -1,0 +1,94 @@
+<html>
+	<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<header><img src="snb.png" height="20px" width="50px" style="padding-left: 20px;"></header>
+<div class="container-fluid" >
+<div class="row">
+<div class ="col-xs-12" style="background-color:white; padding-top: 10px;">
+<div class="row">
+<div class ="col-xs-3" style="background-color:	#4682B4; padding-top: 25px;  max-height:100%;">
+<ul class="nav" >
+<h1> DASHBOARD </h1>
+<li class= "nav-item">
+<a class = "nav-link" href ="#" style="color:white;" > Registration</a>
+</li>
+
+<li class= "nav-item">
+<a class = "nav-link" href ="#" style="color:white;"> Import</a>
+</li>
+<li class= "nav-item">
+<a class = "nav-link" href ="#" style="color:white;"> FAQ</a>
+</li>
+<li class= "nav-item">
+<a class = "nav-link" href ="#" style="color:white;"> Batches</a>
+</li>
+</ul>
+
+
+</div>
+<div class ="col-xs-9">
+<div class="row">
+<div class ="col-xs-3"  style="padding-top: 20px;"  >
+<div class="panel" >
+  <div class="panel-heading"style="background-color:#FFA500; text-align:center;">Panel1</div>
+  <div class="panel-body" style="background-color:	#FF4500; text-align:center;">Total trainings </div>
+</div>
+</div>
+<div class ="col-xs-3"  style="padding-top: 20px;"  >
+<div class="panel" >
+  <div class="panel-heading" style="background-color:#ADD8E6; text-align:center;">Panel2</div>
+  <div class="panel-body" style="background-color:#20B2AA; text-align:center;">Candidates Enrolled </div>
+</div>
+</div>
+<div class ="col-xs-3"  style="padding-top: 20px;"  >
+<div class="panel" >
+  <div class="panel-heading" style="background-color:#CD853F; text-align:center;">Panel3</div>
+  <div class="panel-body" style="background-color:	#A0522D; text-align:center;" >Candidates certified </div>
+</div>
+</div>
+<div class ="col-xs-3"  style="padding-top: 20px; text-align:center;"  >
+<div class="panel ">
+  <div class="panel-heading" style="background-color:#48D1CC; text-align:center;">Panel4</div>
+  <div class="panel-body" style="background-color:	#1E90FF; text-align:center;">Training Centres </div>
+</div>
+</div>
+
+</div>
+<div class="row">
+
+<div class ="col-xs-6"><img src="Fiction.jpg" class="img-thumbnail" alt="Fiction" style="width:400pt; height:200pt;"></div>
+<div class ="col-xs-6">
+<img src="wildlife.jpg" class="img-thumbnail" alt="wildlife" style="width:400pt; height:200pt; "></div>
+</div>
+<div class="row">
+<div class ="col-xs-6">
+<img src="pie.png" class="img-thumbnail" alt="pie" style="width:400pt; height:200pt;"></div>
+<div class ="col-xs-6">
+<img src="slide4.jpg" class="img-thumbnail" alt="slide4" style="width:400pt; height:200pt;"></div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+			<img src="scgjlogo.png" height="70px" width="70px" style="margin-left: 100px">
+			<img src="snb.png" height="70px" width="70px" style="margin-left: 500px">
+			<img src="ttn.png" height="70px" width="70px" style="margin-left: 600px" >
+		</footer>
+</body>
+</html>

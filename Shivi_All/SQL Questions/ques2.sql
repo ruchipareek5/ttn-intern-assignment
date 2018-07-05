@@ -1,0 +1,14 @@
+create schema if not exists record;
+use record;
+create table offenders (person_id int primary key not null , person_name varchar(50) , gender enum('Male', 'female') ,person_age int, person_occupation  varchar(50), person_education  varchar(50), voilatedRule varchar(100), fine int);
+insert into offenders values(1, 'anu', 'female',25, 'teacher', 'B.A', 'did not wear helmet', 150);
+insert into offenders values(2, 'kanu','male',30,'doctor', 'MBBS', 'crosssed  red light', 50);
+insert into offenders values(3, 'john', 'male', 40,'enginner', 'B.tech', 'seated with 2 other person on 2 wheeler', 1000);
+insert into offenders values(4, 'mary','female', 22, 'nurse', 'Bsc', 'did not wear helmet', 150);
+insert into offenders values(5, 'rishu', 'male',19,'plumber', '12th', 'crossed speed limit', 80);
+insert into offenders values(6, 'katy', 'female', 28,'driver', '12th', 'road rash', 200);
+insert into offenders values(7, 'danial', 'male',21,'engineer', 'B.tech', 'did not wear helmet', 150);
+insert into offenders values(8, 'charu', 'female', 33, 'doctor', 'MD', 'did not wear helmet', 150);
+insert into offenders values(9, 'kamal',  'male', 24, 'police', 'B.A.', 'crosssed  red light', 50);
+insert into offenders values(10, 'rajat', 'male', 31,'teacher', 'B.com', 'did not have license', 150);
+select * from offenders where person_age<25 and person_age>18;
