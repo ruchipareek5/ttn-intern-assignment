@@ -1,0 +1,46 @@
+create database if not exists ttn_affliation_body;
+create user 'ttn_db_user1'@'localhost' identified by 'ttndbuser';
+create user 'ttn_app_ass_user'@'localhost' identified by 'ttnappuser1';
+create user 'ttn_app_tra_user'@'localhost' identified by 'ttnappuser2';
+
+use ttn_affliation_body;
+grant select,update,insert,create,grant option on ttn_affliation_body.* to 'ttn_db_user1'@'localhost';
+
+use ttn_affliation_body;
+grant select,update,insert, delete on ttn_affliation_body.* to 'ttn_app_tra_user'@'localhost';
+use ttn_affliation_body;
+grant select,update,insert, delete on PartnerRegistraion to 'ttn_app_ass_user'@'localhost'; 
+
+create table if not exists PartnerRegistraion(UserName varchar(50) primary key not null,
+ Address varchar(100) not null,Email_id Varchar(50),Password varchar(12) not null,Date_of_application date not null, 
+ application_status enum('Change required','Rejected','Approved','Pending'),
+ roles_assigned enum('Training Partner','Assessment partner'));
+
+
+create table if not exists Batch_info(Batch_id int(50) primary key not null, strength int(50),Trainer_Username varchar(50),
+foreign key(Trainer_Username) references PartnerRegistraion(UserName),
+Assesser_Username varchar(50),
+foreign key(Assesser_Username) references PartnerRegistraion(UserName),
+start_date date,end_date date);
+
+insert into PartnerRegistraion values ('shivangi','preet vihar','shivi@123','123456','2018-06-06','Pending','Training Partner');
+select * from PartnerRegistraion;
+create table User like PartnerRegistraion ;
+Insert into User select * from PartnerRegistraion;
+select* from User;
+drop table replica;
+create table replica like User;
+insert into replica select * from User where Date_of_application > '2018-01-01' && Date_of_application <'2018-12-31' ;
+use ttn_affliation_body;
+select * from replica;
+select * from replica where UserName like '%m';
+select * from replica;
+select * from replica where UserName like '___';
+select * from replica where roles_assigned =  'Training Partner';
+select * from replica where UserName like '_a%';
+select * from replica where UserName like '_a';
+select UserName from replica where roles_assigned = 'Training Partner' ;
+select * from replica where username like 'ss%';
+
+
+

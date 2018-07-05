@@ -1,0 +1,18 @@
+create database if not exists ttn_affliation_body;
+create user 'ttn_db_userss'@'localhost' identified by 'ttndbuser';
+create user 'ttn_app_userss'@'localhost' identified by 'ttnappuser';
+
+use ttn_affliation_body;
+grant select,update,insert,create,grant option on ttn_affliation_bod.* to 'ttn_db_userss'@'localhost';
+
+use ttn_affliation_body;
+grant select,update,insert, delete on ttn_affliation_bod.* to 'ttn_app_userss'@'localhost';
+use ttn_affliation_body;
+revoke select, update, insert, delete on ttn_affliation_bod.* from 'ttn_app_userss'@'localhost';
+create table if not exists Application_status( Id int(100) primary key not null, Application_status enum('PENDING','REJECTED','ACCEPTED','CHANGES REQUIRED '));
+create table if not exists Role_ttn(RId int(100) primary key not null, Roles_assigned enum('TRAINER','ASSESSER')); 
+create table if not exists PartnerRegistraion(UserName varchar(50) primary key not null, Address varchar(100) not null,Email_id Varchar(50),Password varchar(12) not null,Date_of_application date not null, application_status int(20), foreign key(application_status) references Application_status(Id), roles_assigned int(20), foreign key(roles_assigned) references Role_ttn(RId));
+
+use ttn_affliation_body;
+create table if not exists Batch_info(Batch_id int(50) primary key not null, strength int(50),Trainer_Username varchar(50),foreign key(Trainer_Username) references PartnerRegistraion(UserName),start_date date,end_date date);
+create table if not exists Batch_Ass(batchid int(50),foreign key(batchid) references Batch_info(Batch_id),AssesserUserName varchar(50),foreign key(AssesserUserName) references partnerregistraion(UserName));

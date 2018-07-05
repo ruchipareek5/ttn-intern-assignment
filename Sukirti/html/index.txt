@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+<link href="Style.css" type="text/css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+ integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+
+<div class="form-group">
+
+<form>
+
+<div class="col-md-2">
+<label for="id" >Name: </label>
+<input type="text" class="form-control" id="id">
+
+
+<br>
+
+
+<label>Password: </label>
+			
+<input type="password" placeholder="please enter your password" class="form-control" required="">
+<br>
+
+
+
+<label for="id2">Date of Birth: </label>
+
+								<input type="date" class="form-control" id="id2">
+<br>
+<label for="id3">Phone: </label>
+
+								<input type="number" class="form-control" id="id3">
+
+<br>
+
+<div>
+<p>City:</p>
+<select>
+<option value="1">1</option>
+
+					<option value="2" selected="">2</option>
+
+<option value="3">3</option>
+
+<option value="4">4</option>
+
+</select>
+<br>
+<div class="form-control">
+<p>TYPE:</p>
+<input type="radio" name="Role" value="TP"  checked="">TP
+<br>
+
+<input type="radio" name="Role"  value="AB">AB
+<br>
+</div>
+<button type="button" class="btn btn-success">Submit</button>
+<button type="button" class="btn btn-danger">Cancel</button>
+<br>
+
+</div>
+
+</div>
+</form>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

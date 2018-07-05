@@ -1,0 +1,132 @@
+create database if not exists ttn_affliation_body;
+create user 'ttn_db_user1'@'localhost' identified by 'ttndbuser';
+create user 'ttn_app_ass_user'@'localhost' identified by 'ttnappuser1';
+create user 'ttn_app_tra_user'@'localhost' identified by 'ttnappuser2';
+
+use ttn_affliation_body;
+grant select,update,insert,create,grant option on ttn_affliation_body.* to 'ttn_db_user1'@'localhost';
+
+use ttn_affliation_body;
+grant select,update,insert, delete on ttn_affliation_body.* to 'ttn_app_tra_user'@'localhost';
+use ttn_affliation_body;
+grant select,update,insert, delete on PartnerRegistraion to 'ttn_app_ass_user'@'localhost'; 
+
+create table if not exists PartnerRegistraion(UserName varchar(50) primary key not null, 
+Appl_id int(10) unique key not null, Address varchar(100) not null,
+Email_id Varchar(50),Password varchar(12) not null,Date_of_application date not null, 
+application_status enum('Change required','Rejected','Approved','Pending','submit'),
+roles_assigned enum('Training Partner','Assessment partner'));
+
+
+create table if not exists Batch_info(Batch_id int(50) primary key not null, strength int(50),Trainer_Username varchar(50),
+foreign key(Trainer_Username) references PartnerRegistraion(UserName),
+Assesser_Username varchar(50),
+foreign key(Assesser_Username) references PartnerRegistraion(UserName),
+start_date date,end_date date);
+
+create table if not exists appl_comment(id int(10) primary key not null,Username varchar(50),
+foreign key(Username) references PartnerRegistraion(UserName),isActive enum('active','passive'),
+commnt varchar(50) not null );
+
+insert into PartnerRegistraion values ('shivangi','preet vihar','shivi@123','123456','2018-06-06','Pending','Training Partner');
+select * from PartnerRegistraion;
+create table User like PartnerRegistraion ;
+Insert into User select * from PartnerRegistraion; 
+select* from User;
+create table replica like User;
+insert into replica select * from User where Date_of_application > '2018-01-01' && Date_of_application <'2018-12-31' ;
+
+insert into Batch_info values (1,30,'Sakshi','shivam','2018-03-09','2018-06-09');
+/* for batches ended in past
+and for batches which will end in future*/
+select * from Batch_info where date(end_date)< curdate() AND Trainer_Username='';
+select * from Batch_info where date(end_date)> curdate() AND Trainer_Username='';
+/* for batches assessed by an assessment agency
+and for batches which assessment body will assess in future*/
+select * from Batch_info where Assesser_Username='';
+select * from Batch_info where Assesser_Username='' AND date(end_date)>curdate();
+/* for applications with submit status 
+and for active application comment*/
+select commnt from appl_comment where Appl_id='' and isActive='active';
+select * from PartnerRegistraion where Application_status='submit';
+use ttn_affliation_body;
+update PartnerRegistraion set application_status='Approved' where UserName='shivangi';
+
+select * from PartnerRegistraion where roles_assigned='Training Partner'
+and Date_of_application between '2018-06-01' and '2018-06-31';
+
+select * from PartnerRegistraion where roles_assigned='Training Partner'
+and (Date_of_application between '2018-06-01' and '2018-06-31')  and
+( Date_of_application  not in ('2018-06-15','2018-06-25'));
+
+
+select * from PartnerRegistraion where roles_assigned='Training Partner'
+and Date_of_application between '2018-06-01' and '2018-06-31' ;
+
+
+select * from batch_info;
+insert into Batch_info values (7,30,'shivangi','shivam','2018-03-09','2018-06-09');
+insert into Batch_info values (2,30,'Sakshi','shivam','2018-04-09','2018-07-09');
+insert into Batch_info values (3,30,'Sakshi','shivam','2018-02-09','2018-05-09');
+insert into Batch_info values (4,30,'shivangi','shivam','2018-01-09','2018-04-09');
+insert into Batch_info values (5,30,'shivangi','shivam','2018-06-09','2018-09-09');
+insert into Batch_info values (6,30,'Sakshi','shivam','2018-08-09','2018-12-09');
+
+insert into Batch_info values (8,30,'Sakshi','shivam','2018-03-09','2018-06-09');
+select count(batch_id) from batch_info where Trainer_Username='Sakshi';
+select * from batch_info;
+select Trainer_Username, count(Trainer_Username) from batch_info
+ group by Trainer_Username having count(Trainer_Username)>3;
+ select Trainer_Username, count(Trainer_Usernamr) from batch_info where (select TrainerName);
+select Assesser_Username,max(Assesser_Username)
+ from batch_info where (select count(Assesser_Username) from batch_info);
+select Assesser_Username,count(Assesser_Username)from Batch_info b;
+
+
+
+
+
+
+
+alter table PartnerRegistraion ADD Appl_id int(10);
+select * from PartnerRegistraion;
+
+update PartnerRegistraion set turnover =34565 where UserName='shivangi';
+select avg(turnover) from PartnerRegistraion where roles_assigned='Training Partner';
+select count(UserName),roles_assigned from PartnerRegistraion  where application_status='Approved' group by roles_assigned;
+select * from PartnerRegistraion;
+update PartnerRegistraion set turnover =34565 where UserName='gurkirat';
+update PartnerRegistraion set turnover =34565 where UserName='shivam';
+
+
+
+create table User1 like PartnerRegistraion;
+insert into User1(UserName) select UserName from 
+PartnerRegistraion;
+
+select batch_id from batch_info where Assesser_Username is null;
+
+insert into Batch_info values (18,30,'Sakshi',null,'2018-03-09','2018-06-09');
+
+
+select a.Appl_id,app.id, app.commnt from PartnerRegistraion as a ,appl_comment as app where Appl_id =id;
+select Appl_id,commnt,id,Email_id from PartnerRegistraion left join appl_comment on Appl_id=id;
+select Username from PartnerRegistraion group by UserName;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

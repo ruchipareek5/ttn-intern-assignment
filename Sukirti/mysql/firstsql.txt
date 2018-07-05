@@ -1,0 +1,109 @@
+create database A;
+
+create schema if not exists A;
+
+create schema ttn_intern_practice;
+
+drop schema if exists A;
+
+drop database if exists ttn_intern_practice;
+
+create database sukirti_practice;
+create user 'suki'@'localhost' identified by 'suki';
+
+use sukirti_practice;
+grant All privileges on sukirti_practice to 'suki'@'localhost';
+
+create schema if not exists A;
+
+create schema if not exists B;
+
+create schema if not exists C;
+
+create schema if not exists D;
+
+create schema if not exists E;
+
+create schema if not exists F;
+
+create user 'a'@'localhost' identified by 'a';
+
+create user 'bcd'@'localhost' identified by 'bcd';
+
+create user 'ef'@'localhost' identified by 'ef';
+
+use A;
+
+grant All privileges on A to 'a'@'localhost';
+
+use B;
+
+grant All privileges on B to 'bcd'@'localhost';
+
+use C;
+
+grant All privileges on C to 'bcd'@'localhost';
+
+use D;
+
+grant All privileges on D to 'bcd'@'localhost';
+
+use E;
+grant All privileges on E to 'ef'@'localhost';
+
+use F;
+grant All privileges on F to 'ef'@'localhost';
+
+use D;
+grant All privileges on D to 'ef'@'localhost';
+
+use A;
+grant All privileges on A to 'ef'@'localhost';
+
+use B;
+grant All privileges on B to 'ef'@'localhost';
+
+use C;
+grant All privileges on C to 'ef'@'localhost';
+
+use A;
+revoke All on A from 'ef'@'localhost';
+
+use B;
+
+revoke All on B from 'ef'@'localhost';
+
+use C;
+revoke All on C from 'ef'@'localhost';
+
+use D;
+revoke All on D from 'ef'@'localhost';
+
+use E;
+revoke All on E from 'ef'@'localhost';
+
+use F;
+revoke All on F from 'ef'@'localhost';
+drop schema A;
+use sukirti
+
+
+
+
+
+use sukirti_practice;
+
+create table if not exists User (name Varchar(50) Primary key not null,Email_id Varchar(50),Password varchar(12) not null, DOB date, contact bigint(10), role int(20), foreign key(role) references Roles_User(id));
+
+create table if not exists Roles_User(id int(20) auto_increment primary key not null, role varchar(20) not null);
+_
+
+
+
+
+
+
+
+
+
+

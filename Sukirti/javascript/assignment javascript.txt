@@ -1,0 +1,59 @@
+que1
+
+var intArray = [23,1,45,25,67,2,4,6,9,11,40,34,12,51,20,09,90,17,18,19,26];
+
+var sukirti= intArray.filter(function(number){return number>20;});
+
+sukirti
+
+que2
+
+var interns=[];
+function inputprompt(){while(true)
+{var name=prompt("Enter your name");
+
+if(name!=null){if(name=="no")
+{break;}else {interns.push(name);
+}}
+}
+console.log(interns)};
+
+undefined
+
+inputprompt();
+
+
+
+que3
+
+var menu=[];
+menu.push({item:'Noodles',price:70});
+menu.push({item:'Dosa',price:100});
+menu.push({item:'Choco-Ice-cream',price:80});
+menu.push({item:'Prantha',price:50});
+menu.push({item:'Chai',price:20});
+menu.push({item:'Roti',price:10});
+menu.push({item:'Shahi Paneer',price:150});
+
+var menuList = [];
+for(let i of menu){
+console.log(JSON.stringify(i));
+menuList+= JSON.stringify(i) + "\n";
+}
+
+ var selecteditem=[];
+
+function inputprompt1(){while(true)
+{var name1=prompt(menuList);
+if(name1!=null){if(name1=="no" || menuList.hasOwnProperty(name1)!=true)
+{break;}else {selecteditem.push(name1);
+}}
+}console.log(selecteditem);}
+inputprompt1();
+
+
+
+
+
+
+Q- diff btw let and var!
