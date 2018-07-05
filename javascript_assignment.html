@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<u>First Javascript Assignment</u><br>
+</head>
+
+<body>
+<p> Question 1: </p>
+<script>
+var array = new Array(2,1,3,5,67,76,21,12,13,98,9,4,40,71,23,103,56,83,29,99);
+document.write(filtered = array.filter(function func(value, index, array){return value > 20}));
+</script>
+
+
+<p> Question 2: </p>
+<script>
+var array = new Array();
+for(;;)
+{
+var a = prompt("Enter your names one by one (kindly write 0 to end list):");
+if (a==0){break;}
+array.push(a);
+}
+array.forEach(function(value, index, array){document.write(value+" ")});
+</script>
+
+<p> Question 3: </p>
+<script>
+var text = '{"menu":[' +
+'{"Name":"Pizza","Price":345 },' +
+'{"Name":"Burger","Price":50 },' +
+'{"Name":"Noodles","Price":80 }]}';
+
+obj = JSON.parse(text);
+
+for(i=0; i<3; i++)
+{document.write(obj.menu[i]+ Name + " " + obj.menu[i].Price;)}
+</script>
+
+</body>
+</html> 
+
+
