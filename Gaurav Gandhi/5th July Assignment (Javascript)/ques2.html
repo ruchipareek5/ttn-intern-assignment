@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 2</title>
+	 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"> 
+</head>
+<body>
+
+	<script type="text/javascript">
+		var a = [];
+		document.write(a);
+		for (var i = 1;;i++) {
+			var b = prompt("Please enter Intern's name or 0 to exit :");
+			if(b == 0)
+			{
+				break;
+			}
+			else
+			{
+				a.push(b);
+			}
+
+		}
+		document.write("<h1>The name of the interns entered are : </h1><br>")
+		a.forEach(function(value,index,array){
+			document.write(value+"<br>");
+		})
+	</script>
+</body>
+</html>
