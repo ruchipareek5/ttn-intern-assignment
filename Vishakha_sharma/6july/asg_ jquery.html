@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function func()
+		 {
+			
+		var val1=document.getElementById("name").value;
+		var val2=document.getElementById("pwd").value;
+		var len=val2.length;
+		if (val1=="vishakha")
+		 {
+		 	alert("hello"+"  "+val1);
+		 }
+		 else
+		 {
+		 	alert("oops!!");
+		 }
+		
+		if (len<6)
+		 {
+		 	alert("Password should not be less than 6 characters");
+		 }
+		
+		if(val1=="vishakha" && len>6)
+		{
+			<p>YOUR DETAILS ARE CORRECT />
+		}
+		}
+		
+		</script>
+</head>
+<body>
+
+<h2 align="center">FORM</h2>
+
+<form>
+  First name:<input type="text" id="name" placeholder="Enter your name here...">
+  <br>
+  Password  :<input type="Password" id="pwd" placeholder="Enter your password...">
+  <br><br>
+  <p>Message on verify me</p>
+  <input type="submit" value="Verify Me"  onclick="func()">
+
+</form> 
+
+</body>
+</html>
