@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+
+<script>
+$(document).ready(		//if this jquery function isn't available, I'd have written the                                 ready method. 
+function(){				//This 'ready' method will call when ready event will fire, it      //1                  will fire when document is created completely.
+console.log("My document is ready");
+//2    
+var a =$("input[name='snake']").val();
+    console.log(a);
+//3    
+ var g=$("li");
+    console.log(g.text());
+//OR
+//3
+    $( "li" ).each(function( index ) {
+    console.log( index + ": " + $( this ).text() );
+    });
+//4    
+var c= $("input[name $='ake']").val();
+    console.log(c);
+//5    
+var d=$("ul li:even");
+    console.log(d.text());
+//6    
+console.log($("p").parents());
+
+//7  
+console.log($("div").parent());
+
+//8  
+console.log($("div").children());
+
+//9
+console.log($("ul").children().css("background-color","yellow"));
+
+//10
+console.log($("ul").children().css({"background-color": "yellow" , "font-family":"cursive"}));
+
+//11
+$("div").find("div").css("background-color","pink");
+
+//12
+console.log($("div").next().css("background-color","orange"));
+
+//13
+console.log($("div").prev().css("background-color","red"));
+    
+//14
+console.log($("div").siblings().css("background-color","green"));
+
+//15
+console.log($("li").closest("ul").css("background-color","red"));
+    
+//16
+$("li").each(function(){
+    $(this).css("background-color", "blue");
+});
+
+//17
+console.log($("li").hasClass("pets"));
+}); 
+    
+</script>   
+</head>
+
+<body>
+<p> This is a sample p tag </p>
+<div>
+    <p>This is sample p1</p>
+    
+    <div>
+    <p>This is sample p2</p>
+    </div>
+</div> 
+
+<div class="welcome">Welcome</div>
+    <ul id="reptiles">
+    <li class="pets">Common Garter</li>
+    <li class="pets">Thread snake</li>
+    <li class="pets">Corn Snkaer</li>
+    <li class="pets">Rock Python</li>
+    </ul>
+    
+    <input type="text" name="snake" value="mamba"/>
+</body>
+
+</html>
