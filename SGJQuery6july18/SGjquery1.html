@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Surbhi Garg JQuery Assignment1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){$("#verify").click(
+		function()
+		{
+			var name=$("#name").val();
+			var pwd=$("#Password1").val();
+			var alertmsgs=[];
+			var flag1=false;
+			//console.log("and");
+			//console.log(flag1&&flag2);
+			if(name=="surbhi")
+			{
+				alertmsgs.push("hello surbhi!");
+				flag1=true;
+			}
+			if(pwd.length<6)
+			{
+				alertmsgs.push("Password should not be less than 6 characters");
+				flag1=false;
+			}
+			if(flag1==true)
+			{
+				$("#msg").text("Your details are correct");
+			}
+			if(alertmsgs.length>0)
+			{
+				alert(alertmsgs.join("\n"));
+			}
+	
+		});
+	});
+</script>
+</head>
+
+<body>
+<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="Password1">Password</label>
+    <input type="password" class="form-control" id="Password1">
+  </div>
+  <p id="msg">Message on verify me</p>
+  <input type="submit" class="btn btn-primary" id="verify" value="Verify Me" />
+</form>
+</body>
+</html>
