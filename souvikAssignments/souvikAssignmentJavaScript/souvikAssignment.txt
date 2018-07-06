@@ -49,18 +49,53 @@ undefined
 
 
 /*question no 3*/
-
-
 var menu={
  name :['pasta','noodles','chowmein','burger','butter chicken','pizza'],
  price:[100,200,300,400,500,600]
 };
 
+for(k=0;k<menu.name.length;k++)console.log(menu.name[k]+" "+menu.price[k]);
+
+
 var x;
+
 var i=0;
-do{
-		console.log(menu.name[i]+" "+menu.price[i]);
-		i++;
-		x=prompt("enter your choice (yes/no)");
-}while(x =="yes");
+
+do
+{
+		
+	console.log(menu.name[i]+" "+menu.price[i]);
+		
+	i++;
+		
+	x=prompt("enter your choice (yes/no)");
+
+}	
+while(x =="yes");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
