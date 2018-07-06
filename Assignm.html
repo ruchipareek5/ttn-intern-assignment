@@ -1,0 +1,42 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".btn,.btn-primary").click(function(){
+        var x=$("#exampleInputEmail1").val();
+        if(x=="lohit")
+            alert("Hello lohit");
+        if($("#exampleInputPassword1").val().length<6)
+            alert("Password is too small");
+        if(x=="lohit" && ($("#exampleInputPassword1").val().length)>=6)
+            $("p").text("Your details are correct");
+    });
+    });
+</script>
+</head>
+<body>
+        <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail" style="margin-left: 2vw">Name</label>
+                  <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" style="margin-left: 3.55vw;width: 25vw;margin-top: 0vh;display: inline;">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" style="margin-left: 2vw">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="margin-left: 2vw;width: 25vw;margin-top: 0vh;display: inline;">
+                <button type="submit" class="btn btn-primary" style="margin-left: 2vw;margin-top: 1vh;display: block">Submit</button>
+                </div>
+       </form>
+    <p>Message on Verify me            </p>
+</body>
+</html>
