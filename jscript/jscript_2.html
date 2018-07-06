@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>assignment 2</title>
+</head>
+<body>
+<button onclick="addIntern()">Intern Array</button>
+<button onclick="printArray()">Print Array </button>
+<script type="text/javascript">
+    var ttnInterns=[];
+    function addIntern()
+    {
+        ttnInterns.push(prompt("Enter name of candidate here:"));
+    }
+    function printArray()  /*actual printing of array */
+    {
+        var i;
+        for(i=0;i<ttnInterns.length;i++)
+        {
+            console.log(ttnInterns.join(" "));
+        }
+    }
+</script>
+</body>
+</html>
