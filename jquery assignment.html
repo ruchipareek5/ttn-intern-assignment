@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.center {
+    text-align: center;
+    border: 3px solid blue;
+    width:505px;
+    margin: auto;
+}
+</style>
+
+	<script src="https://ajax.aspnetcdn.com/ajax//jQuery/jquery-3.3.1.min.js"> 
+	</script>
+
+	<script>
+$(document).ready(function(){
+   $("form").submit(function(){  
+    var a = $("input[name='name']").val();
+    alert("Hello"+" "+a);
+
+if($("input[name='password']").val().length<6)
+{
+alert("Password should not be less than 6 characters.")
+}
+
+else
+{
+$("p").text("Your details are correct.")
+}
+
+})
+
+});
+	</script>
+</head>
+
+<body>
+<div class = "center">
+<form action="">
+  Name:<br>
+  <input type="text" name="name">
+  <br>
+  Password:<br>
+  <input type="text" name="password">
+  <br><br>
+  
+  <p>Message on verify me.</p> 
+  <input type="submit" value="Verify Me">
+</form>
+</div>
+
+</body>
+</html>
