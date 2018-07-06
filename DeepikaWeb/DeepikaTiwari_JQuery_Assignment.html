@@ -1,0 +1,66 @@
+<!-- Deepika Tiwari - JQuery Assignment -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>JQuery - Form Validation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Form Validation
+			$("#my-button").click(function() {
+				const $username = $("#username").val();
+				const $password = $("#password").val();
+				if ($username == "Your Name" || $username == "Deepika Tiwari")
+					alert("Hello, " + $username + "!");
+				if ($password.length < 6)
+					alert("Password should not be less than 6 characters");
+				if (($username == "Your Name" || $username == "Deepika Tiwari") && ($password.length >= 6))
+					$("#validation-text").text("Your details are correct!");
+			});
+		});
+	</script>
+	<style type="text/css">
+	body {
+		padding: 2em;
+		text-align: center;
+		font-family: sans-serif;
+		background-color: #c6e2ff;
+	}
+	#user-form {
+		background-color: #fff;
+		padding: 2em;
+		margin: auto;
+		border: 0.2em dashed #000;
+		border-radius: 0.3em;
+		width: 50%;
+		font-size: 1.2em;
+	}
+	#my-button {
+		background-color: #b6fcd5;
+		padding: 0.4em;
+		border: 0.1em solid black;
+		border-radius: 0.3em;
+	}
+	#validation-text {
+		padding: 1em;
+		font-size: 0.7em;
+		color: #4ca64c;
+	}
+	</style>
+</head>
+<body>
+	<h1>Please fill out your details</h1>
+	<div id="user-form">
+		<form>
+			<label for="username"><strong>Name: </strong></label>
+			<input type="text" placeholder="Name here" name="username" id="username"/><br/>
+			<label for="password"><strong>Password: </strong></label>
+			<input type="password" placeholder="Password here" id="password" name="password"/><br/>
+			<p id="validation-text"></p>
+			<submit id="my-button">Verify me</submit>
+		</form>
+	</div>
+</body>
+</html>
