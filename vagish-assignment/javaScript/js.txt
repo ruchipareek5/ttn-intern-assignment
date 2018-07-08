@@ -1,0 +1,53 @@
+//Question 1
+
+var arr=[20,15,23,12,45,2,3,76]
+undefined
+a.length
+VM40:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM40:1
+arr.len
+
+undefined
+arr.length
+8
+arr.filter(function(value,index,array){if(value>=20){console.log(value)}})
+VM71:1 20
+VM71:1 23
+VM71:1 45
+VM71:1 76
+[]
+
+
+//Question 2
+
+var numberEmployee=prompt("Enter the number of Employee");
+undefined
+for(i=0;i<numberEmployee;i++)
+{
+    var abcd=prompt("Enter the name of employee");
+    b.push(a);
+}
+
+//Question 3
+
+var first={"menu":[{"name":"Dal","price":"100"},{"name":"Sabzi","price":"100"},{"name":"naan","price":"20"}]}
+undefined
+do
+{
+    var second=prompt("Enter the name of dish");
+    switch(second)
+    {
+        case "Dal" :
+            console.log(first.menu[0].price);
+            break;
+        case "Sabzi" :
+            console.log(first.menu[0].price);
+            break;
+        case "naan" :
+            console.log(first.menu[0].price);
+            break;
+    }
+}while(window.confirm("Do you want to see menu again"))
+VM180:7 100
+VM180:13 100
