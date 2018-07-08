@@ -1,0 +1,55 @@
+<!Doctype Html>
+<html>
+<head>
+<title>form</title>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script>
+$(document).ready(function(){
+    $("#button").click(function(){
+		if ($('#name').val()=="Rohit")
+		{
+			alert("Hello Rohit");
+		}
+		else{alert("Please enter correct name");}
+		
+		if($('#password').val().length>6)
+		{
+			$('#p').html("Your details are correct");
+		}
+		else
+		{
+			alert("Password should not be less than 6 character");
+			$('#p1').html("Your details are not correct");
+		}
+		
+		
+		
+    });
+});
+</script>
+
+</head>
+
+<body>
+<form class="form" style="margin:5px 5px 5px 40px">
+<div class="form-group">
+<label class="form-check-label">Name</label>
+<div class="row">
+<div class="col-xs-6 col-sm-4 col-md-3">
+<input type="text" id="name" name="username" class="form-control"placeholder="Please Enter your Name" required">
+</div>
+</div>
+<label class="form-check-label">Password</label>
+<div class="row">
+<div class="col-xs-6 col-sm-4 col-md-3">
+<input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
+</div>
+</div>
+</div>
+  <p id="p" style="color:green"></p>
+  <p id="p1" style="color:red"></p>
+<input id="button" type="button" class="btn btn-primary" value="SUBMIT">
+
+</body>
+</html>
