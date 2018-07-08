@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Verify me</title>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        
+        <script>
+            $(document).ready(
+                function(){
+                
+                $("#v1").click(function(){
+                    var input1=document.getElementById("text1").value;
+                    var input2=document.getElementById("text2").value;
+                    if(input2.length<6)
+                    {
+                        alert("Password should not be less than 6 character")
+                    }
+                    else if(input1=="amarjeet"&&input2.length<6){
+                    alert("Hello "+input1+",  Password should not be less than 6 character");
+                   }
+                    else if(input1=="amarjeet"&&input2.length>=6)
+                    {
+                        document.getElementById("m1").innerHTML=(input1+" , Your details are correct");
+                    }
+                    else
+                    {
+                        alert("incorrect details");  
+                    }
+                    
+                });
+            });
+        </script>
+        
+               
+    </head>
+    <body>
+        <section style="background-image:url('nature.jpg');width:100vw;height:100vh;background-size:cover">
+            <div class="row">
+            <div >
+                <center>
+                <table style="margin-top:200px;border:2px solid pink; cellspacing:8px;background-color:cornsilk">
+                    <tr >
+                        <td style="padding:10px;">Name    </td>
+                        <td style="padding:10px;"><input type="text" id="text1"></td>
+                    </tr>
+                    <tr >
+                        <td style="padding:10px;">Password    </td>
+                        <td style="padding:10px;"><input type="password" id ="text2"></td>
+                    </tr>
+                    <tr>
+                        <td id="m1" style="padding:10px;">Message on verify me</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="padding:10px;">
+                        <button type="button" class="btn btn-primary" id="v1">Verify me</button>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            </div>
+        </section>
+    </body>
+</html>
