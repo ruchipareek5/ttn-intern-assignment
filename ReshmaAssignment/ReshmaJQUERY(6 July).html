@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+	label{
+		float: left;		
+	}
+	input{
+		border: solid 2px blue;
+		float: right;
+		margin-right: 8vw;
+		width: 10vw;
+	}
+	button{
+		border: 0px;
+		background-color: blue;
+		color: white;
+		padding: 0.5rem;		
+	}
+</style>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+    	var name = $("#name").val();
+    	var pwd = $("#password").val();
+    	if(name=="reshma"||name=="RESHMA"||name=="Reshma")
+        	alert("WELCOME Reshma");
+
+    	if(pwd.length<6)
+    		alert("Password should not be less than 6");
+
+    	if(name=="reshma"||name=="RESHMA"||name=="Reshma" && pwd.length>6)
+    		 $("#message").show();
+    });
+});
+</script>
+<title>JQUERY ASSIGNMENT</title>
+</head>
+<body>
+	<center>
+		<div style="border: solid 0.2rem blue; width: 30vw;height: 80vh;">
+			<form style="padding: 2rem; width: 25vw;margin-top:30%">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name">
+				<br>
+				<br>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password">
+				<br>
+				<p id="message" style="display: none;"> Welcome to page. Details are correct.</p>
+				<br>
+				<button>Verify Me</button>
+			</from>
+
+		</div>
+	</center>
+</body>
+</html>
