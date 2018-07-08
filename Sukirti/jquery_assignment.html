@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+
+	</script>
+	
+	<script>
+		$(document).ready(
+				function()
+				{	
+				
+				$("button").click(function(){
+				var n=$(#id).val();
+				if(n == "sukirti"){alert("hello sukirti");}
+				if($(".password").val().length<6)
+				{alert("Password should not be less than 6 characters.");}
+				if (($("#id").val()=="sukirti") && (($(".password").val().length>6))
+				{alert("Your details are correct");}
+				}
+				
+				
+
+
+	
+				}					  
+
+
+
+
+
+
+);
+	</script>
+	</head>
+<body>
+<div class="form-group">
+<form>
+<div class="row">
+<label for="id">Name: </label>
+<input class="name" id="id" type="text">
+<label>Password: </label>
+<input class="password" type="password">
+<button >Verify me</button>
+</div>
+</form>
+</div>
+
+</body>
+</html>
