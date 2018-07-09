@@ -1,0 +1,47 @@
+assignment fo linux
+
+find command 
+
+your understatnding:
+find command is used to search files and directories by allowing us to specify the type as well as the what exactly we are looking in a file or a directory. the "man find" command displays that it is used for walking the file hierarchy . so according to my understanding this command can be used to find files and traversing in the heirarchical file system. 
+
+
+problems solved by this command 
+1) one of the major problems solved by this command is to find the files matching our criteria that is finding a specific files which is required to perform certain operations on them. eg: we need a specific file and wants to modify that file therefore this command can be used to do so. 
+
+2)find command can be used to delete a particular file according to our selection criteria . -exec is used to perform the operations on the fetched file once we recieve it .
+ commands
+
+ find ./ -name souvik -exec rm -R {} \;
+ find ./ -name -empty -exec rm {} \;   this removes all the empty files
+
+
+
+Locate command
+locate command is used to quickly locate the files and directories in the system. the difference between the loacte command and find command is that the result displayed by the locate command is not fresh or updated as the fins command because locate  displayes only the snapshots stored in a database program.
+
+problem1
+displaying limited no of files with a spoecific name or pattern 
+command locate -l 1 souvik
+
+problem2
+diplay the statics of the locate database 
+
+command : locate -s 
+
+tail command
+tail command is used to print last n no of records in a file .
+problem : if a user wants to display the last 10 lines of a file he can do so using tail command like the command written below:
+command : tail -n 10 souvik.txt     
+problem:if a user wants to display the last 10 characters of a file he can do so using tail command like the command written below
+tail -c 10 souvik.txt
+
+tar command 
+tar command is used to create archived files (collections of files and directories) 
+problem- tar command is used to package multiple files into a single file which can be used to take backup of the files into a single file 
+problem : also tar command can be used to move files form one pc to another pc by creating archive for all the files and moving the files 
+
+coommand 
+tar -cvf file.tar .
+
+tar command can also be used to create a compressed version of archived files
