@@ -1,0 +1,36 @@
+﻿//Question 1
+var arr=[23,59,75,8,49,28,2,1,21,9,31,8,16,46,91,16,35,66,77,48];
+resultArray=arr.filter(function(val,ind,array) { return val>20 })
+
+//Question 2
+var intern=new Array(29);
+for(var i=0;i<27;i++)
+{
+	intern[i]=prompt("Welcome intern. Enter your name");
+}
+
+for(var i=0;i<27;i++)
+{
+	console.log(intern[i])
+}
+
+//Question 3
+
+var menu =
+    {		menuName:['chilli potato','french fries','burger','taco'],
+		price:[100,80,120,110]
+    };
+	
+var i=0;
+do{
+	console.log(menu.menuName[i]+"\t\t:\t"+menu.price[i]);
+	i++;
+}while(i<menu.menuName.length)
+
+var i=0;
+do{
+	
+	confirm(menu.menuName[i]+"\t:\t"+menu.price[i]);
+var status=confirm("do you want to select any other item");
+	i++;
+}while(status==true&&i<menu.menuName.length);	
