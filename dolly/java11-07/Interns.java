@@ -39,4 +39,15 @@ public class Interns {
     public Interns() {
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Interns )
+        {
+            if(this.getName()==((Interns) obj).name)
+                return true;
+        }
+        else
+            return false;
+        return this.getId()==((Interns) obj).getId();
+    }
 }

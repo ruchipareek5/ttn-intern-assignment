@@ -1,10 +1,9 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Main {
      static int d;
     public static void main(String[] args) {
+
 
         ArrayList<Interns> arr = new ArrayList<>();
         Interns i1=new Interns("dolly",1,25);
@@ -61,5 +60,7 @@ public class Main {
         {
             System.out.println(ob.getId()+" "+ob.getName()+" "+ob.getScore());
         }
+
+
     }
 }
