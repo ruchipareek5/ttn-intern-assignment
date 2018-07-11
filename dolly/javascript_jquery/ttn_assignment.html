@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		//function myCustomEvent(){console.log("this is my first custom event")}
+		$(document).ready(
+			function(){
+				console.log("my document is ready");
+				console.log($("input[name='snake']").val());
+				console.log($("input[name$='ake']").val());//ends with ake
+				console.log($("input[name^='sna']").val());//starts with sna
+				console.log($("input[name~='nak']").val());//contains nak
+				console.log($("ul li:first").text());
+				console.log($("ul li:lt(2)").text());
+				console.log($("ul").children().css("background-color","lightsalmon"));
+				console.log($("body").siblings());
+				$("body").find("div").css("background-color","darkturquoise");		
+				$("li").closest("ul").css("background-color","blue");
+				$("ul").each(
+						function(value,index,array) {$(this).css("color","blanchedalmond")
+													 console.log(index);
+													 console.log(value);}
+					);
+				console.log($("li").hasClass("pets"));
+				console.log($(".pets").is("ul li:first-child"));
+				console.log($(".pets").not("ul li:first-child"));//leaving first child all li came
+				
+			});
+	</script>
+</head>
+<body>
+	<p onclick=myCustomEvent()">this is a paragraph</p>
+	<div class="welcome">WELCOME</div>
+	<ul id="reptiles">
+		<li class="pets">commom garter</li>
+		<li class="pets">thread snake</li>
+		<li class="pets">corn snake</li>
+		<li class="pets">rock python</li>
+	</ul>
+	<input type="text" name="snake" value="DOLLY">
+	<input type="button" name="">
+</body>
+</html>
