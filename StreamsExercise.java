@@ -8,11 +8,11 @@ public class StreamsExercise {
 
     public static void main(String[] args) {
         List<Person> l = new ArrayList<>();
-        l.add(new Person("Prateek",21,Person.Gender.male));
-        l.add(new Person("Vagish",21,Person.Gender.male));
-        l.add(new Person("Gagan",19,Person.Gender.male));
-        l.add(new Person("Arpit",24,Person.Gender.male));
-        l.add(new Person("Surbhi",20,Person.Gender.female));
+        l.add(new Person("Prateek",22,Person.Gender.male));
+        l.add(new Person("Vagish",22,Person.Gender.male));
+        l.add(new Person("Gagan",22,Person.Gender.male));
+        l.add(new Person("Arpit",22,Person.Gender.male));
+        l.add(new Person("Surbhi",22,Person.Gender.female));
 
         Iterator<Person> p = l.iterator();
 
