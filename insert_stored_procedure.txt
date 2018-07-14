@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(in username varchar(50),in age int,in gender enum('male','female'))
+
+BEGIN
+
+insert into user values(username,age,gender);
+
+END
