@@ -9,7 +9,7 @@ END
 
 /*Triggers
 
-CREATE DEFINER=`root`@`localhost` TRIGGER `ttn_test`.`ttn_user_BEFORE_INSERT` After Update ON `ttn_user` FOR EACH ROW
+CREATE DEFINER=`root`@`localhost` TRIGGER `ttn_test`.`ttn_user_AFTER_INSERT` After Update ON `ttn_user` FOR EACH ROW
 BEGIN
 update audit set old.email =new.email;
 END
@@ -34,7 +34,7 @@ public class JdbcConcept {
             cst.setString (3,"Male");
             cst.execute();
 
-            PreparedStatement pst=(PreparedStatement)con.prepareCall("Select * from batch");
+            PreparedStatement pst=(PreparedStatement)con.prepareStatement("Select * from batch");
             ResultSet rs=pst.executeQuery();
 
             while(rs.next())
