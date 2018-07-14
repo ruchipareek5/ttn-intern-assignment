@@ -1,0 +1,37 @@
+creating tables
+
+create database TriggerAssignments;
+use TriggerAssignments;
+create table if not exists person
+(
+	username varchar(100),
+    age int ,
+    email varchar(100),
+    gender enum('male','female','other')
+);
+
+create table if not exists person2
+(
+	
+    oldemail varchar(100),
+    newemail varchar(100),
+);
+
+
+creating procedures 
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `my_procedure`()
+BEGIN
+insert into person(username,age,email,gender) values (@username,@age,@email,@gender);
+END
+
+
+
+creating  triggers
+
+DELIMITER //
+create trigger triggerDemo after update on  person
+for each row
+begin
+insert into person2(oldemail;newemail) values(old.email,new.email);
+end; //
