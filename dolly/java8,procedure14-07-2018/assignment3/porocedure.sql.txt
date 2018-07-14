@@ -1,0 +1,6 @@
+CREATE PROCEDURE simpleproc (IN user_id int,IN user_name varchar(50),IN gender varchar(50),In age int)
+BEGIN
+    insert into student (userid,age,username,gender) values (user_id,age,user_name,gender);
+END
+
+call procedure ttn.simpleproc;
