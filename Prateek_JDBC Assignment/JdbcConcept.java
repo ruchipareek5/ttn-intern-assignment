@@ -9,9 +9,15 @@ END
 
 /*Triggers
 
-CREATE DEFINER=`root`@`localhost` TRIGGER `ttn_test`.`ttn_user_AFTER_INSERT` After Update ON `ttn_user` FOR EACH ROW
+create trigger emailupd 
+BEFORE UPDATE ON ttn_test.users
+FOR EACH ROW
 BEGIN
-update audit set old.email =new.email;
+set @new_name=new.username;
+SET @old_name=old.username;
+if @new_name != @old_name then
+insert into audit_user values(@old_name,@new_name);
+end if;
 END
 
 */
@@ -20,8 +26,7 @@ import java.util.ArrayList;
 
 public class JdbcConcept {
     public static void main(String[] args) {
-        ArrayList al = new ArrayList();
-        ArrayList list = new ArrayList();
+       List<Batch> batches;
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(
@@ -38,18 +43,23 @@ public class JdbcConcept {
             ResultSet rs=pst.executeQuery();
 
             while(rs.next())
-                al.add(rs.getInt("bid"));
-            al.add(rs.getString("bname"));
-            al.add(rs.getString("startdate"));
-            al.add(rs.getString("enddate"));
-            al.add(rs.getInt("tid"));
-            al.add(rs.getInt("aid"));
-            list.add(al);
+            {
+                String batchId=resultSet.getString("batch_id");
+                String batchName=resultSet.getString("batch_name");
+                Date batchStartDate=resultSet.getDate("batch_start_date");
+                Date batchEndDate=resultSet.getDate("batch_end_date");
+                int assessorId=resultSet.getInt("assessor_id");
+                int trainerId=resultSet.getInt("trainer_id");
+                batches.add(new Batch(batchId,batchName.BatchStartDate,batchEndDate,assessorId,trainerId));
 
-            HashMap<String, Batch> batchMap = new HashMap<String, Batch>();
-            for (Batch b : list) {
-                batchMap.put(b.getBatchId(), b);
-            }
+           
+             List<Batch> pastBatches=batches.stream().filter(x->x.getEndDate().compareTo(new Date())<0).collect(Collectors.toList());
+            HashMap<String,List<Batch>>bMap=new HashMap<>();
+            bMap.put("Past Batches",pastBatches);
+            
+            List<Batch> presentBatches=batches.stream().filter(x->x.getEndDate().compareTo(new Date())>0).collect(Collectors.toList());
+            HashMap<String,List<Batch>>bMap=new HashMap<>();
+            bMap.put("Present Batches",presentBatches);
 
             con.close();
         }
