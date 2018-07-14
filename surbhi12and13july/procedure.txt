@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_into_users`(in uname varchar(100),in age int,in gender varchar(100) )
+BEGIN
+insert into users(username,age,gender) values(uname,age,gender);
+END
