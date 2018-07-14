@@ -1,6 +1,0 @@
-[0629/100320:ERROR:crash_report_database_win.cc(562)] CreateDirectory C:\Program Files (x86)\Bedhat\Reports\Dump: The system cannot find the path specified. (0x3)
-[0629/100320:ERROR:registration_protocol_win.cc(82)] TransactNamedPipe: The pipe has been ended. (0x6D)
-[0629/100320:ERROR:crash_report_database_win.cc(562)] CreateDirectory C:\Program Files (x86)\Bedhat\Reports\Dump: The system cannot find the path specified. (0x3)
-[0629/103737:ERROR:crash_report_database_win.cc(562)] CreateDirectory C:\Program Files (x86)\Bedhat\Reports\Dump: The system cannot find the path specified. (0x3)
-[0629/103737:ERROR:registration_protocol_win.cc(82)] TransactNamedPipe: The pipe has been ended. (0x6D)
-[0629/103737:ERROR:crash_report_database_win.cc(562)] CreateDirectory C:\Program Files (x86)\Bedhat\Reports\Dump: The system cannot find the path specified. (0x3)
