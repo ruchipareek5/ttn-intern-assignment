@@ -1,10 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MainApp {
@@ -20,21 +17,21 @@ public class MainApp {
         Batch b9 = new Batch("B0888","QP0109",123,"TP02",30,new Date(112,4,10),new Date(112,6,10));
         Batch b10 = new Batch("B0999","QP0110",123,"TP04",30,new Date(116,1,12),new Date(116,3,12));
 
-        ArrayList<Batch> arrayList = new ArrayList<>();
+        List<Batch> list = new LinkedList<>();
 
-        arrayList.add(b1);
-        arrayList.add(b2);
-        arrayList.add(b3);
-        arrayList.add(b4);
-        arrayList.add(b5);
-        arrayList.add(b6);
-        arrayList.add(b7);
-        arrayList.add(b8);
-        arrayList.add(b9);
-        arrayList.add(b10);
+        list.add(b1);
+        list.add(b2);
+        list.add(b3);
+        list.add(b4);
+        list.add(b5);
+        list.add(b6);
+        list.add(b7);
+        list.add(b8);
+        list.add(b9);
+        list.add(b10);
         Date today = new Date();
-        HashMap<String,ArrayList<Batch>> hashMap = new HashMap<>();
-        ArrayList currentBatches = arrayList.stream()
+        HashMap<String,List<Batch>> hashMap = new HashMap<>();
+        List currentBatches = list.stream()
                 .filter(d -> d.getBatchEndDate().compareTo(today) > 0)
                 .collect(Collectors.toList());
 
