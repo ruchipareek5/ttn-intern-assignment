@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dyanamic Tables With JQuery</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container text-center">
+	<h1 class="display-4">Manage Actions</h1>
+	<hr/>
+	<p class="lead">Submitted Applications</p>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+		  <thead>
+		    <tr class="table-info">
+		      <th scope="col">Application ID</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">District</th>
+		      <th scope="col">Date of Application</th>
+		      <th scope="col">Action</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr class="submitted-application-id-1">
+		      <th scope="row">AB1</th>
+		      <td>Galaxy</td>
+		      <td>South</td>
+		      <td>May 12, 2018</td>
+		      <td>
+		      	<div class="btn-group application-1" role="group" aria-label="Application Actions">
+						  <button type="button" class="btn btn-success">Approve</button>
+						  <button type="button" class="btn btn-danger">Reject</button>
+						  <button type="button" class="btn btn-warning">Modify</button>
+						</div>
+		      </td>
+		    </tr>
+		    <tr class="submitted-application-id-2">
+		      <th scope="row">AB2</th>
+		      <td>Supernova</td>
+		      <td>West</td>
+		      <td>June 16, 2018</td>
+		      <td>
+		      	<div class="btn-group application-2" role="group" aria-label="Application Actions">
+						  <button type="button" class="btn btn-success">Approve</button>
+						  <button type="button" class="btn btn-danger">Reject</button>
+						  <button type="button" class="btn btn-warning">Modify</button>
+						</div>
+		      </td>
+		    </tr>
+		    <tr class="submitted-application-id-3">
+		      <th scope="row">AB3</th>
+		      <td>Cluster</td>
+		      <td>North</td>
+		      <td>July 3, 2018</td>
+		      <td>
+		      	<div class="btn-group application-3" role="group" aria-label="Application Actions">
+						  <button type="button" class="btn btn-success">Approve</button>
+						  <button type="button" class="btn btn-danger">Reject</button>
+						  <button type="button" class="btn btn-warning">Modify</button>
+						</div>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+		<hr/>
+		<p class="lead">Approved Applications</p>
+		<div class="table-responsive">
+		<table class="table table-striped table-hover approved-application">
+		  <thead>
+		    <tr class="table-success">
+		      <th scope="col">Application ID</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">District</th>
+		      <th scope="col">Date of Application</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<!-- rows added here -->
+		  </tbody>
+		</table>
+		<hr/>
+		<p class="lead">Rejected Applications</p>
+		<div class="table-responsive">
+		<table class="table table-striped table-hover rejected-application">
+		  <thead>
+		    <tr class="table-danger">
+		      <th scope="col">Appication ID</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">District</th>
+		      <th scope="col">Date of Application</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<!-- rows added here -->
+		  </tbody>
+		</table>
+		<hr/>
+		<p class="lead">Incomplete Applications</p>
+		<div class="table-responsive">
+		<table class="table table-striped table-hover modify-application">
+		  <thead>
+		    <tr class="table-warning">
+		      <th scope="col">Application ID</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">District</th>
+		      <th scope="col">Date of Application</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<!-- rows added here -->
+		  </tbody>
+		</table>
+		<hr/>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// for application 1
+			$(".application-1").click(function(event) {
+				var row_html = $(".submitted-application-id-1").html();
+				var new_row_html = "<tr>" + row_html.slice(0, row_html.lastIndexOf("<td>") - 1) + "</tr>";
+				console.log(new_row_html);
+				$(".submitted-application-id-1").remove();
+				// console.log(row_html);
+				var textOnButton = $(event.target).html();
+				console.log(textOnButton);
+				if (textOnButton.includes("Approve")) {
+					console.log("Add to approved table!");
+					$(".approved-application tbody:last").append(new_row_html);
+				}
+				if (textOnButton.includes("Reject")) {
+					console.log("Add to rejected table!");
+					$(".rejected-application tbody:last").append(new_row_html);
+				}
+				if (textOnButton.includes("Modify")) {
+					console.log("Add to incomplete table!");
+					$(".modify-application tbody:last").append(new_row_html);
+				}
+			});
+			// for application 2
+			$(".application-2").click(function(event) {
+				var row_html = $(".submitted-application-id-2").html();
+				var new_row_html = "<tr>" + row_html.slice(0, row_html.lastIndexOf("<td>") - 1) + "</tr>";
+				console.log(new_row_html);
+				$(".submitted-application-id-2").remove();
+				// console.log(row_html);
+				var textOnButton = $(event.target).html();
+				console.log(textOnButton);
+				if (textOnButton.includes("Approve")) {
+					console.log("Add to approved table!");
+					$(".approved-application tbody:last").append(new_row_html);
+				}
+				if (textOnButton.includes("Reject")) {
+					console.log("Add to rejected table!");
+					$(".rejected-application tbody:last").append(new_row_html);
+				}
+				if (textOnButton.includes("Modify")) {
+					console.log("Add to incomplete table!");
+					$(".modify-application tbody:last").append(new_row_html);
+				}
+			});
+			// for application 3
+			$(".application-3").click(function(event) {
+				var row_html = $(".submitted-application-id-3").html();
+				var new_row_html = "<tr>" + row_html.slice(0, row_html.lastIndexOf("<td>") - 1) + "</tr>";
+				console.log(new_row_html);
+				$(".submitted-application-id-3").remove();
+				// console.log(row_html);
+				var textOnButton = $(event.target).html();
+				console.log(textOnButton);
+				if (textOnButton.includes("Approve")) {
+					console.log("Add to approved table!");
+					$(".approved-application tbody:last").append(new_row_html);
+				}
+				if (textOnButton.includes("Reject")) {
+					console.log("Add to rejected table!");
+					$(".rejected-application tbody:last").append(new_row_html);
+				}
+				if (textOnButton.includes("Modify")) {
+					console.log("Add to incomplete table!");
+					$(".modify-application tbody:last").append(new_row_html);
+				}
+			});
+		});
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
