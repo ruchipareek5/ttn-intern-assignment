@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation-JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$("#button").click(function(){
+
+const $username = $("#username").val();
+const $password = $("#password").val();
+
+    if ($username == "name" || $username == "gagan")
+        alert("Hello, " + $username + "!");
+
+    if ($password.length < 6)
+
+    $("#validation-text").text("Enter 6 charcter");
+
+    if (($username == "name" || $username == "gagan") && ($password.length > 6))
+        $("#validation-text").text("hjjqhewfbjehfbhjf");
+});
+
+});
+</script>
+    <link rel="stylesheet" href="Jmain.css">
+</head>
+<body>
+
+<h1>Please Enter you Details</h1>
+<div class="Uform">
+    <form>
+
+        <label for="Username"> <strong>Name :</strong></label>
+       <input type="text" placeholder="Name here" name="Username" id="Username"><br/>
+        <label for="password"><strong>Password :</strong></label>
+        <input type="password" placeholder="Enter password" name="password" id="password"><br/>
+        <p id="validation-text"></p>
+        <button id="button">Verify</button>
+    </form>
+</div>
+</body>
+</html>

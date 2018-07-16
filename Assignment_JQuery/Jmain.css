@@ -1,0 +1,52 @@
+body {
+    font-family: "Apple Symbols";
+    text-align: center;
+    padding: 3em;
+    background-color: aquamarine;
+
+}
+h1{
+
+    font-size: 4em;
+
+}
+#validation-text {
+    padding: 1em;
+    font-size: 0.7em;
+    color: #4ca64c;
+}
+#button {
+    background-color: darkseagreen;
+    padding: 0.4em;
+    border: 0.1em solid black;
+    border-radius: 0.3em;
+    font-size: 1.4em;
+}
+
+
+.Uform {
+background-color: azure;
+border-style: double;
+    border-width: 0.6em;
+    border-radius: 0.5em;
+width: 40%;
+    margin: auto;
+    font-size: 1.2em;
+    font-family: ".SF NS Display";
+    padding: 2em;
+
+}
+.Uform input {
+
+    font-size: xx-large;
+    margin-top: 0.7em;
+}
+.Uform label {
+
+    font-size: xx-large;
+}
+#validation-text {
+
+    font-size: 2em;
+    font-style: italic;
+}
