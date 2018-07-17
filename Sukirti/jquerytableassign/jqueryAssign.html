@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Assignment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  	<style type="text/css">
+  		
+  		#Submitted th{
+  		    padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #cdea90;
+    		color: white;
+  			}
+  		#approved th{
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #4CAF50;
+    		color: white;
+  		}
+  		#rejected th{
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #e62e00;
+    		color: white;
+  		}
+  		#incomplete th{
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #2f6276;
+    		color: white;
+  		}
+  		#incomplete-btn{
+  			color: black;
+  		}
+  	</style>
+  	<script>
+  		
+  		$(document).ready(function(){
+  			$(".approved-btn").click(function(){
+  				alert("Assessment Agency is approved.");
+  				$(this).parents("tr").hide();
+  				$('#approved > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".rejected-btn").click(function(){
+  				alert("Assessment Agency is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#rejected > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".incomplete-btn").click(function(){
+  				alert("Assessment Agency is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#incomplete > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  		});
+  	</script>
+</head>
+<body>
+<div class="container-fluid">
+	<!--header start-->
+	<div class="row">
+    	<div class="col-sm-12">
+        	<div class="header bg-white">
+<div class="row">
+    <div  class="navbar">
+    <div class="col-sm-6 col-xs-6 ">
+                <div id="logo1" class="logo"><a> <img src="Images/scgj.gif" height="83" width="378"/></a></div>
+    </div>
+
+
+          <div class="col-lg-2 col-xs-2 "></div>
+          <div class="col-lg-4 col-xs-4 ">
+                <div class="lastlogo" ><a>
+                    <img src="Images/skill-nsdc.png" height="92" width="400"/></a></div>
+          </div>
+</div>
+
+      </div>
+</div>
+</div></div></div>
+
+
+
+<!--main content -->
+        <div class="col-sm-12">
+        	<div class="right-sidebar bg-white main" style="overflow-y: auto">
+<div class="table-responsive">
+	<h1>Approve/Reject Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="Submitted">
+	  <thead>
+	    <tr>
+	      <th scope="col">S.No.</th>
+	      <th scope="col">Institution Name</th>
+	      <th scope="col">Type</th>
+	   	   <th scope="col">Date</th>
+	   	   <th scope="col">Action</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+    	<tr id="row1">
+    	  <td scope="row">1</td>
+    	  <td>Marks and Spencer pvt ltd</td>
+    	  <td>Assessment Agency</td>
+    	  <td>28/8/2018</td>
+    	  <td>
+    	  		<button type="button" class="btn btn-success approved-btn" >Approved</button>
+    	  		<button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+    	
+    	<tr id="row2">
+    	  <td scope="row">2</td>
+    	  <td>Shoppers Stop pvt ltd</td>
+    	  <td>Assessment Agency</td>
+    	  <td>23/10/2018</td>
+    	  <td>
+    	  		<button type="button" class="btn btn-success approved-btn" >Approved</button>
+    	  		<button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+
+    	<tr id="row3">
+    	  <td scope="row">3</td>
+    	  <td>Delhi Central pvt ltd</td>
+    	  <td>Training Partner</td>
+    	  <td>29/7/2018</td>
+    	  <td>
+    	  		<button type="button" class="btn btn-success approved-btn" >Approved</button>
+    	  		<button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+
+
+    	<tr id="row3">
+    	  <td scope="row">4</td>
+    	  <td>Big Bazar pvt ltd</td>
+    	  <td>Assessment Agency</td>
+    	  <td>2/4/2018</td>
+    	  <td>
+    	  		<button type="button" class="btn btn-success approved-btn" >Approved</button>
+    	  		<button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+    	<tr id="row3">
+    	  <td scope="row">5</td>
+    	  <td>UCB pvt ltd</td>
+    	  <td>Assessment Agency</td>
+    	  <td>27/1/2017</td>
+    	  <td>
+    	  		<button type="button" class="btn btn-success approved-btn" >Approved</button>
+    	  		<button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+    	<tr id="row3">
+    	  <td scope="row">6</td>
+    	  <td>Pantaloons pvt ltd</td>
+    	  <td>Training Partner</td>
+    	  <td>29/7/2018</td>
+    	  <td>
+    	  		<button type="button" class="btn btn-success approved-btn" >Approved</button>
+    	  		<button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+  	</tbody>
+	</table>
+</div>
+
+<div class="container">
+	<h1>Approved Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="approved">
+	  <thead>
+	    <tr>
+	      <th scope="col">S.No.</th>
+	      <th scope="col">Institution Name</th>
+	      <th scope="col">Type</th>
+	   	   <th scope="col">Date</th>
+	   	</tr>
+	  </thead>
+	  	<tbody>
+    	
+  		</tbody>
+	</table>
+</div>
+<div class="container">
+	<h1>Rejected Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="rejected">
+	  <thead>
+	    <tr>
+	    <th scope="col">S.No.</th>
+	    <th scope="col">Institution Name</th>
+	    <th scope="col">Type</th>
+   	   <th scope="col">Date</th>
+	   	</tr>
+	  </thead>
+	  	<tbody>
+    
+  		</tbody>
+	</table>
+</div>
+
+
+<div class="container">
+	<h1>Incomplete Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="incomplete">
+	  <thead>
+	    <tr>
+			<th scope="col">S.No.</th>
+	    	<th scope="col">Institution Name</th>
+	   	 	<th scope="col">Type</th>
+	   	   	<th scope="col">Date</th>
+	    </tr>
+	  </thead>
+	  	<tbody>
+
+    	</tbody>
+	</table>
+</div>
+
+            </div>
+        </div> 
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--bottom three block-->
+    <div  class="row">
+    	<div class="col-sm-4 col-xs-6">
+        	<div class="bottom-left-block bg-white" >
+<div>
+	<a><img src="Images/powerministry.jpg" height="90" width="350"/></a>
+</div>
+        </div>
+        </div>
+		<div class="col-sm-4 col-xs-6">
+        	<div class="bottom-middle-block bg-white">
+                <div>
+                    <a><img src="Images/monre.jpg" height="90" width="350"/></a>
+                </div>
+            </div>
+        </div>
+		<div class="col-sm-4 col-xs-12">
+        	<div class="bottom-right-block bg-white">
+                <div>
+                    <a><img src="Images/PM-Kaushal-Vikas-Yojana-logo.jpg" height="90" width="350"/></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--footer start-->
+    <div class="row">
+
+
+
+    	<div class="col-sm-12">
+        	<div class="footer bg-white">
+
+                <div  class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div class=" bg-white">
+                            <div>
+
+                                <div  style="font-size: 30px">
+
+                                    <h1>Company<span>logo</span></h1>
+
+                                    <p class="footer-links">
+                                        <a href="#">Home</a>
+                                        ·
+                                        <a href="#">Blog</a>
+                                        ·
+                                        <a href="#">Pricing</a>
+                                        ·
+                                        <a href="#">About</a>
+                                        ·
+                                        <a href="#">Faq</a>
+                                        ·
+                                        <a href="#">Contact</a>
+                                    </p>
+
+                                    
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 ">
+                        <div class=" bg-white">
+
+                            <div class="copyright">
+
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.9243004445534!2d77.1858713151937!3d28.602047692210533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d5c17861f55%3A0xdfb53cf50b40c95!2sSkill+Council+for+Green+Jobs+%2F+SCGJ!5e0!3m2!1sen!2sin!4v1531561855682" width="400" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                                <p>Copyright &copy; TTN TEAM 3  <a href="" target="_blank"></a></p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class=" bg-white">
+                            <div>
+                                <p >
+                                    <span>About the company</span>
+                                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                                </p>
+
+                                <div class="footer-icons" style="font-size:50px">
+
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-github"></i></a>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+</body>
+</html>

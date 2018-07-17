@@ -11,27 +11,28 @@
 				function()
 				{	
 				
-				$("button").click(function(){
-				var n=$(#id).val();
-				if(n == "sukirti"){alert("hello sukirti");}
-				if($(".password").val().length<6)
-				{alert("Password should not be less than 6 characters.");}
-				if (($("#id").val()=="sukirti") && (($(".password").val().length>6))
-				{alert("Your details are correct");}
+					$("#button").click(function(){
+					var n=document.getElementById("id").val();
+					if(n == "sukirti")
+						{alert("hello sukirti");}
+					//if($(".password").val().length<6)
+					//{alert("Password should not be less than 6 characters.");}
+					//if (($("#id").val()=="sukirti") && (($(".password").val().length>6))
+					//{alert("Your details are correct");}
 				}
 				
 				
 
 
 	
-				}					  
+									  
 
 
 
 
 
 
-);
+)
 	</script>
 	</head>
 <body>
@@ -42,7 +43,7 @@
 <input class="name" id="id" type="text">
 <label>Password: </label>
 <input class="password" type="password">
-<button >Verify me</button>
+<input type=button id=button value="Verify ME"/>
 </div>
 </form>
 </div>
