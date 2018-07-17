@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".approve").click(function () {
+                $(".approved").append($(this).parent().siblings()).append("<tr></tr>");
+                $(this).parent().remove();
+                $(this).siblings().remove();
+                $(this).remove();
+            })
+            $(".rejected").click(function () {
+                $(".rejected1").append($(this).parent().siblings()).append("<tr></tr>");
+                $(this).parent().remove();
+                $(this).siblings().remove();
+                $(this).remove();
+            })
+            $(".edit").click(function () {
+                $(".edited").append($(this).parent().siblings()).append("<tr></tr>");
+                $(this).parent().remove();
+                $(this).siblings().remove();
+                $(this).remove();
+            })
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Assignment</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td >john@example.com</td>
+            <td><button class="approve">Approve</button>
+                <button class="rejected">Rejected</button>
+                <button class="edit">Edit</button></td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+            <td><button class="approve">Approve</button>
+                <button class="rejected">Rejected</button>
+                <button class="edit">Edit</button></td>
+        </tr>
+        <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+            <td><button class="approve">Approve</button>
+                <button class="rejected">Rejected</button>
+                <button class="edit">Edit</button></td>
+        </tr>
+    </table>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody class="approved">
+        </tbody>
+    </table>
+    <table class="table table-hover rejected1">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+<table class="table table-hover edited">
+    <thead>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>
