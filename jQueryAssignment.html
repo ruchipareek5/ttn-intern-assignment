@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+jQuery(document).ready(function(){
+$(".abc").change(function(){
+alert("A change has been triggered.");
+var a = $(this).parents(".tr");
+a.remove();
+
+var selectedVal = $(this).find(':selected').val();
+console.log(selectedVal);
+if (selectedVal == "Approved"){$(".Approved tbody").append(a);}
+if (selectedVal == "Rejected"){$(".Rejected tbody").append(a);}
+if (selectedVal == "Incomplete"){$(".Incomplete tbody").append(a);}
+				})
+});
+</script>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    
+}
+
+th{background-color: #dddddd;}
+</style>
+</head>
+<body>
+
+<h2>jQuery Assignment</h2>
+<br>
+<table>
+<th>Submitted Applications</th>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Status</th>	
+  </tr>
+  <tr class="tr">
+    <td>Batch1</td>
+    <td>12/07/2018</td>
+    <td>Assessment Body</td>
+    <td><select name="status" class = "abc">
+	<option  value="Submitted">Submitted</option>
+    <option  value="Approved">Approved</option>
+    <option value="Rejected">Rejected</option>
+    <option value="Incomplete">Incomplete</option>
+  </select></td>
+  </tr>
+ 
+  <tr class="tr">
+    <td>Batch3</td>
+    <td>01/06/2018</td>
+    <td>Assessment Body</td>
+	<td><select name="status" class = "abc">
+	<option  value="Submitted">Submitted</option>
+    <option value="Approved">Approved</option>
+    <option value="Rejected">Rejected</option>
+    <option value="Incomplete">Incomplete</option>
+  </select></td>
+  </tr>
+ 
+  <tr class="tr">
+    <td>Batch6</td>
+    <td>01/04/2017</td>
+    <td>Assessment Body</td>
+	<td><select name="status" class = "abc">
+	<option  value="Submitted">Submitted</option>
+    <option value="Approved">Approved</option>
+    <option value="Rejected">Rejected</option>
+    <option value="Incomplete">Incomplete</option>
+  </select></td>
+  </tr>
+  <tr class="tr">
+    <td>Batch8</td>
+    <td>01/07/2018</td>
+    <td>Assessment Body</td>
+	<td><select name="status" class = "abc">
+	<option  value="Submitted">Submitted</option>
+    <option value="Approved">Approved</option>
+    <option value="Rejected">Rejected</option>
+    <option value="Incomplete">Incomplete</option>
+  </select></td>
+  </tr>
+</table>
+
+<br><br>
+<table class = "Approved">
+<th>Approved Applications</th>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Type</th>
+	<th>Current Status</th>
+  </tr>
+</table>
+<br><br>
+<table class = "Rejected">
+<th>Rejected Applications</th>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Type</th>
+	<th>Current Status</th>
+  </tr>
+</table>
+<br><br>
+<table class = "Incomplete">
+<th>Incomplete Applications</th>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Type</th>
+	<th>Current Status</th>
+  </tr>
+</table>
+
+
+</body>
+</html>
