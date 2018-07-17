@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="myP" />
+    <context:annotation-config />
+    <!--&lt;!&ndash;init-method:(method name>)  destroy method (method name)&ndash;&gt;-->
+    <!--<bean id="mentor" class="myP.Mentor" name="mentor2" init-method="init" destroy-method="myDestroyFunction"-->
+          <!--scope="prototype">-->
+
+        <!--&lt;!&ndash;<property name="name" value="Vagish"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="dependent" ref="dependentClass"></property>&ndash;&gt;-->
+        <!--<constructor-arg ref="dependent"/>-->
+        <!--<constructor-arg index="2" value="2"/>-->
+        <!--&lt;!&ndash;<constructor-arg type="java.lang.String" name="name" value="vagishdixit"/>&ndash;&gt;-->
+        <!--<constructor-arg type="java.lang.String" index="1" value="vagishdixit"/>-->
+
+        <!--&lt;!&ndash;<property name="dependentClass">&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<bean  class="myP.DependentClass"/>&ndash;&gt;   Inner bean&ndash;&gt;-->
+        <!--&lt;!&ndash;</property>&ndash;&gt;-->
+
+    <!--</bean>-->
+
+    <!--&lt;!&ndash;another way to declare bean&ndash;&gt;-->
+    <!--&lt;!&ndash;<alias name="mentor" alias="abcd"></alias> &ndash;&gt;-->
+
+    <!--<bean id="dependent" class="myP.DependentClass"/>-->
+
+
+</beans>

@@ -1,7 +1,0 @@
-I am unable to filter the batches according to dates and store it in hashmap.
-I am still trying i will  update my branch with that question once i am able to do so.
-
-
-
-For jdbc one i have used a method please check if that one is right approach
-to enter deatials in hashmap.

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Constructor based-->
+    <bean id="employeeBean" class="TrySpring.Employee">
+        <constructor-arg ref="deptBean"/>
+    </bean>
+
+    <bean id="employeeBean4" class="TrySpring.Employee">
+        <constructor-arg ref="deptBean"/>
+        <constructor-arg name="name" value="Vagish Dixit"/>
+    </bean>
+
+    <bean id="employeeBean2" class="TrySpring.Employee">
+        <constructor-arg name="name" value="Vagish"/>
+        <constructor-arg name="age" value="1234"/>
+    </bean>
+
+    <bean id="employeeBean3" class="TrySpring.Employee">
+        <constructor-arg index="0" value="Vagish"/>
+        <constructor-arg index="1" value="1234"/>
+    </bean>
+
+    <bean id="deptBean" class="TrySpring.Dept"></bean>
+
+
+    <!--Setter Based-->
+
+    <bean id="deptBeanSetter" class="TrySpring.Dept"/>
+
+    <bean id="studentBean" class="TrySpring.Student" autowire="byName">
+        <property name="name" value="vagish"/>
+        <property name="age" value="132"/>
+        <!--<property name="dept" ref="deptBeanSetter"/>-->
+    </bean>
+
+    <bean id="dept" class="TrySpring.Dept"/>
+
+
+    <!--Inner Bean-->
+    <bean id="studentBean1" class="TrySpring.Student">
+        <property name="dept">
+            <ref bean="deptBeanSetter"/>
+        </property>
+    </bean>
+
+    <!--ByName autowiring means it will search for  bean id with same name as that of class variable-->
+    <!--ByType autowiring means it will search for bean with same class type-->
+
+    <bean id="studentBean3" class="TrySpring.Student" autowire="byName">
+        <property name="name" value="vagish"/>
+        <property name="age" value="132"/>
+    </bean>
+
+    <!--Scope init method and destroy method-->
+
+    <bean id="personBean" class="TrySpring.Person" init-method="myInitMethod" scope="singleton"
+          destroy-method="myDestroyMethod">
+        <property name="dept" ref="deptBeanSetter"/>
+        <property name="age" value="123"/>
+        <property name="name" value="Vagish"/>
+
+    </bean>
+    <bean id="personBean1" class="TrySpring.Person" init-method="myInitMethod" scope="prototype"
+          destroy-method="myDestroyMethod">
+        <property name="dept" ref="deptBeanSetter"/>
+        <property name="age" value="123"/>
+        <property name="name" value="Vagish"/>
+    </bean>
+
+</beans>
