@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".approve").click(function () {
+                $(".approved").append($(this).parent().siblings().parent());
+                $(this).parent().remove();
+                $(this).siblings().remove();
+                $(this).remove();
+            })
+            $(".rejected").click(function () {
+                $(".rejected1").append($(this).parent().siblings().parent());
+                $(this).parent().remove();
+                $(this).siblings().remove();
+                $(this).remove();
+            })
+            $(".edit").click(function () {
+                $(".edited").append($(this).parent().siblings().parent());
+                $(this).parent().remove();
+                $(this).siblings().remove();
+                $(this).remove();
+            })
+        });
+    </script>
+</head>
+<body>
+
+<div class="container ">
+    <h2 class="text-center font-weight-bold font-italic text-info">Assignment</h2>
+    <table class="table table-hover border">
+        <tr>
+            <th class="bg-primary">Firstname</th>
+            <th class="bg-primary">Lastname</th>
+            <th class="bg-primary">Email</th>
+            <th class="bg-primary">Action</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td >john@example.com</td>
+            <td><button class="approve btn btn-success">Approve</button>
+                <button class="rejected btn btn-danger">Rejected</button>
+                <button class="edit btn btn-primary">Edit</button></td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+            <td><button class="approve btn btn-success">Approve</button>
+                <button class="rejected btn btn-danger">Rejected</button>
+                <button class="edit btn btn-primary">Edit</button></td>
+        </tr>
+        <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+            <td><button class="approve btn btn-success">Approve</button>
+                <button class="rejected btn btn-danger">Rejected</button>
+                <button class="edit btn btn-primary">Edit</button></td>
+        </tr>
+    </br>
+    </table>
+</br></br>
+    <table class="table table-hover approved">
+        <tr>
+            <th class="bg-primary">Firstname</th>
+            <th class="bg-primary">Lastname</th>
+            <th class="bg-primary">Email</th>
+            <th class="bg-primary">Action</th>
+        </tr>
+    </table>
+</br></br>
+    <table class="table table-hover rejected1">
+        <thead>
+        <tr>
+            <th class="bg-primary">Firstname</th>
+            <th class="bg-primary">Lastname</th>
+            <th class="bg-primary">Email</th>
+            <th class="bg-primary">Action</th>
+        </tr>
+    </table>
+</br>
+<table class="table table-hover edited">
+    <tr>
+        <th class="bg-primary">Firstname</th>
+        <th class="bg-primary">Lastname</th>
+        <th class="bg-primary">Email</th>
+        <th class="bg-primary">Action</th>
+    </tr>
+</table>
+</br>
+</div>
+
+</body>
+</html>
