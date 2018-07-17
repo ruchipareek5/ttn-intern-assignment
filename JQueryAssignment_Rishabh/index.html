@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>JQuery Assignment</title>
+<script type="text/javascript">
+	
+	$(document).ready(
+		function(){
+			$(".approve").click(
+				function(){
+					var a = ($(this).parent()).parent().html();
+					var b = a.lastIndexOf("<td>");
+					a=a.slice(0,b);
+					console.log(a);
+						$("#approved").append("<tr>"+a+"</tr>");
+						var b = ($(this).parent()).parent().css({"display":"none"});
+				}
+				);
+
+
+			$(".reject").click(
+				function(){
+					var a = ($(this).parent()).parent().html();
+					var b = a.lastIndexOf("<td>");
+					a=a.slice(0,b);
+					console.log(a);
+						$("#rejected").append("<tr>"+a+"</tr>");
+						var b = ($(this).parent()).parent().css({"display":"none"});
+				}
+				);
+
+			$(".modify").click(
+				function(){
+					var a = ($(this).parent()).parent().html();
+					var b = a.lastIndexOf("<td>");
+					a=a.slice(0,b);
+					console.log(a);
+						$("#modified").append("<tr>"+a+"</tr>");
+						var b = ($(this).parent()).parent().css({"display":"none"});
+				}
+				);
+
+
+		});
+</script>
+
+
+
+
+
+</head>
+<body>
+<div class="container">
+	<h4>Submitted Application</h4>
+<table id="submitted "border="2" class="table table-stripped">
+	<thead >
+		<tr class="success">
+		<th scope="col">Application ID</th>
+		<th scope="col"> QP</th>
+		<th scope="col">Location</th>
+		<th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody id="submittedBody">
+		<tr>
+			<td>1</td>
+			<td>Solar</td>
+			<td>Delhi</td>
+			<td>
+				<button class="approve btn btn-success mr-2">Approve</button>
+				<button class = "modify btn btn-warning">Modification</button>
+				<button class="reject btn btn-alert">Reject</button>
+			</td>
+		</tr>
+
+		<tr>
+			<td>2</td>
+			<td>Solar Setup</td>
+			<td>Noida</td>
+			<td>
+				<button class="approve btn btn-success mr-2">Approve</button>
+				<button class = "modify btn btn-warning">Modification</button>
+				<button class="reject btn btn-alert">Reject</button>
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Waste Picker</td>
+			<td>Ghaziabad</td>
+			<td>		<button class="approve btn btn-success mr-2">Approve</button>
+				<button class = "modify btn btn-warning">Modification</button>
+				<button class="reject btn btn-alert">Reject</button></td>
+
+
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Solar PV Installer</td>
+			<td>Lucknow</td>
+			<td>		<button class="approve btn btn-success mr-2">Approve</button>
+				<button class = "modify btn btn-warning">Modification</button>
+				<button class="reject btn btn-alert">Reject</button></td>
+
+
+		</tr>
+	
+	</tbody>
+</table>
+
+	<h4>Approved Applications</h4>
+<table border="2" class="table table-stripped">
+	<thead >
+		<tr class="success">
+		<th scope="col">Application ID</th>
+		<th scope="col"> QP</th>
+		<th scope="col">Location</th>
+		
+		</tr>
+	</thead>
+	<tbody id="approved" >
+		
+	</tbody>
+</table>
+	<h4>Rejected Applications</h4>
+<table  border="2" class="table table-stripped">
+	<thead >
+		<tr class="success">
+		<th scope="col">Application ID</th>
+		<th scope="col"> QP</th>
+		<th scope="col">Location</th>
+	
+		</tr>
+	</thead>
+	<tbody id  ="rejected">
+		
+	</tbody>
+</table>
+
+<h4>Modified Applications</h4>
+<table  border="2" class="table table-stripped">
+	<thead >
+		<tr class="success">
+		<th scope="col">Application ID</th>
+		<th scope="col"> QP</th>
+		<th scope="col">Location</th>
+	
+		</tr>
+	</thead>
+	<tbody id  ="modified">
+		
+	</tbody>
+</table>
+</div>
+
+
+</body>
+</html>
