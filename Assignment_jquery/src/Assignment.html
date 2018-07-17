@@ -10,19 +10,19 @@
     <script>
         $(document).ready(function () {
             $(".approve").click(function () {
-                $(".approved").append($(this).parent().siblings()).append("<tr></tr>");
+                $(".approved").append($(this).parent().siblings().parent());
                 $(this).parent().remove();
                 $(this).siblings().remove();
                 $(this).remove();
             })
             $(".rejected").click(function () {
-                $(".rejected1").append($(this).parent().siblings()).append("<tr></tr>");
+                $(".rejected1").append($(this).parent().siblings().parent());
                 $(this).parent().remove();
                 $(this).siblings().remove();
                 $(this).remove();
             })
             $(".edit").click(function () {
-                $(".edited").append($(this).parent().siblings()).append("<tr></tr>");
+                $(".edited").append($(this).parent().siblings().parent());
                 $(this).parent().remove();
                 $(this).siblings().remove();
                 $(this).remove();
@@ -66,17 +66,13 @@
                 <button class="edit">Edit</button></td>
         </tr>
     </table>
-    <table class="table table-hover">
-        <thead>
+    <table class="table table-hover approved">
         <tr>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
             <th>Action</th>
         </tr>
-        </thead>
-        <tbody class="approved">
-        </tbody>
     </table>
     <table class="table table-hover rejected1">
         <thead>
@@ -86,21 +82,14 @@
             <th>Email</th>
             <th>Action</th>
         </tr>
-        </thead>
-        <tbody>
-        </tbody>
     </table>
 <table class="table table-hover edited">
-    <thead>
     <tr>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
         <th>Action</th>
     </tr>
-    </thead>
-    <tbody>
-    </tbody>
 </table>
 </div>
 
