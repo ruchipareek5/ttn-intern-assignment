@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<title>JqueryAssignment</title>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#approveBtn").click(function()
+			{
+
+				$("#submitTable").each(function() 
+				{	
+					 var checkedBox = $(this).find('input:checked');
+					 if(checkedBox.is(':checked'))
+				 	{	
+				 		var data1 = $(checkedBox).closest('tr').find("td").eq(0).text();
+				 		var data2 = $(checkedBox).closest('tr').find("td").eq(1).text();
+				 		var data3 = $(checkedBox).closest('tr').find("td").eq(2).text();
+            			$("#approvedTable").append("<tr><td>"+data1+"</td><td>"+data2+"</td><td>"+data3+"</td><tr>");
+            			$(checkedBox).closest('tr').remove();
+       			 	}
+       			 	else
+       			 	{
+       			 		console.log("nops");
+       			 	}
+				});
+			});
+
+			$("#rejectBtn").click(function()
+			{
+
+				$("#submitTable").each(function() 
+				{	
+					 var checkedBox = $(this).find('input:checked');
+					 if(checkedBox.is(':checked'))
+				 	{	
+				 		var data1 = $(checkedBox).closest('tr').find("td").eq(0).text();
+				 		var data2 = $(checkedBox).closest('tr').find("td").eq(1).text();
+				 		var data3 = $(checkedBox).closest('tr').find("td").eq(2).text();
+            			$("#rejectTable").append("<tr><td>"+data1+"</td><td>"+data2+"</td><td>"+data3+"</td><tr>");
+            			$(checkedBox).closest('tr').remove();
+       			 	}
+       			 	else
+       			 	{
+       			 		console.log("nops");
+       			 	}
+				});
+			});
+
+			$("#editBtn").click(function()
+			{
+
+				$("#submitTable").each(function() 
+				{	
+					 var checkedBox = $(this).find('input:checked');
+					 if(checkedBox.is(':checked'))
+				 	{	
+				 		var data1 = $(checkedBox).closest('tr').find("td").eq(0).text();
+				 		var data2 = $(checkedBox).closest('tr').find("td").eq(1).text();
+				 		var data3 = $(checkedBox).closest('tr').find("td").eq(2).text();
+            			$("#incompleteTable").append("<tr><td>"+data1+"</td><td>"+data2+"</td><td>"+data3+"</td><tr>");
+            			$(checkedBox).closest('tr').remove();
+       			 	}
+       			 	else
+       			 	{
+       			 		console.log("nops");
+       			 	}
+				});
+			});
+			
+		});
+
+	</script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+			<div class="submittedApps">
+					<h3>Submitted Applications</h3>
+					<table class="table table-striped" id="submitTable">
+						<thead>
+						<tr>
+							<th>ApplicationId</th>
+							<th>ApplicationDate</th>
+							<th>NameOFTrainingPartner</th>
+							<th>SelectForAction</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>SB1</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+							<td><input class="form-check-input" type="checkbox" id="autoSizingCheck2"></td>
+						</tr>
+						<tr>
+							<td>SB2</td>
+							<td>23-12-2002</td>
+							<td>niit xyz</td>
+							<td><input class="form-check-input" type="checkbox" id="autoSizingCheck2"></td>
+						</tr>
+						<tr>
+							<td>SB3</td>
+							<td>23-12-2002</td>
+							<td>zee xyz</td>
+							<td><input class="form-check-input" type="checkbox" id="autoSizingCheck2"></td>
+						</tr>
+						<tr>
+							<td>SB4</td>
+							<td>23-12-2002</td>
+							<td>ducat xyz</td>
+							<td><input class="form-check-input" type="checkbox" id="autoSizingCheck2"></td>
+						</tr>
+						</tbody>				
+					</table>
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<button type="button" class="btn btn-success" id="approveBtn">Approve</button>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<button type="button" class="btn btn-danger" id="rejectBtn">Reject</button>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<button type="button" class="btn btn-warning" id="editBtn">Edit</button>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2"></div>
+		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+			<div class="approvedApps">
+					<h3>Approved Applications</h3>
+					<table class="table table-striped" id="approvedTable">
+						<thead>
+						<tr>
+							<th>ApplicationId</th>
+							<th>ApplicationDate</th>
+							<th>NameOFTrainingPartner</th>
+						</tr>
+						</thead>
+						<tr>
+							<td>AA1</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>AA2</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>AA3</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>AA4</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>				
+					</table>
+			</div>
+		</div>	
+	</div>
+	<br>		
+	<div class="row">
+		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+			<div class="rejectedApps">
+					<h3>Rejected Applications</h3>
+					<table class="table table-striped" id="rejectTable">
+						<thead>
+						<tr>
+							<th>ApplicationId</th>
+							<th>ApplicationDate</th>
+							<th>NameOFTrainingPartner</th>
+						</tr>
+						</thead>
+						<tr>
+							<td>RJ1</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>RJ2</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>RJ3</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>RJ4</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>				
+					</table>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 "></div>		
+		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+			<div class="incompleteApps">
+					<h3>Incomplete Applications</h3>
+					<table class="table table-striped" id="incompleteTable">
+						<thead>
+						<tr>
+							<th>ApplicationId</th>
+							<th>ApplicationDate</th>
+							<th>NameOFTrainingPartner</th>
+						</tr>
+						</thead>
+						<tr>
+							<td>In1</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>In2</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>In3</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>
+						<tr>
+							<td>In4</td>
+							<td>23-12-2002</td>
+							<td>abc xyz</td>
+						</tr>				
+					</table>
+			</div>
+		</div>		
+	</div>
+
+</body>
+</html>
