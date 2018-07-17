@@ -55,6 +55,14 @@ public class Batches {
         this.training_name = training_name;
     }
 
-    public static void main(String[] args) {
+    @Override
+    public String toString() {
+        return "Batches{" +
+                "batch_id=" + batch_id +
+                ", name='" + name + '\'' +
+                ", start_date=" + start_date +
+                ", end_date=" + end_date +
+                ", training_name='" + training_name + '\'' +
+                '}';
     }
 }
