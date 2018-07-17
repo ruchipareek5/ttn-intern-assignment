@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Assignment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	
+  	<script>
+  		
+  		$(document).ready(function(){
+  			$(".approved-btn").click(function(){
+  				alert("Assessment Agency is approved.");
+  				$(this).parents("tr").hide();
+  				$('#approved > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".rejected-btn").click(function(){
+  				alert("Assessment Agency is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#rejected > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".incomplete-btn").click(function(){
+  				alert("Assessment Agency is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#incomplete > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  		});
+  	</script>
+</head>
+<body>
+<div class="container">
+	<h1>Submitted Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="Submitted">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Location</th>
+	   	   <th scope="col">Date</th>
+	   	   <th scope="col">Status</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+    	<tr id="row1">
+    	  <td scope="row">1</td>
+    	  <td>Kamal</td>
+    	  <td>Delhi</td>
+    	  <td>25/9/2018</td>
+    	  <td>
+    	  		<button type="button" class="btn approved-btn" >Approved</button>
+    	  		<button type="button" class="btn rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+    	
+    	<tr id="row2">
+    	  <td scope="row">2</td>
+    	  <td>Shivi</td>
+    	  <td>Delhi</td>
+    	  <td>10/7/2012</td>
+    	  <td>
+    	  		<button type="button" class="btn  approved-btn" >Approved</button>
+    	  		<button type="button" class="btn  rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn  incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+
+    	<tr id="row3">
+    	  <td scope="row">3</td>
+    	  <td>Sukirti</td>
+    	  <td>Dwarka</td>
+    	  <td>10/09/2011</td>
+    	  <td>
+    	  		<button type="button" class="btn  approved-btn" >Approved</button>
+    	  		<button type="button" class="btn  rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+
+
+    	<tr id="row3">
+    	  <td scope="row">4</td>
+    	  <td>Kuldeep</td>
+    	  <td>UP</td>
+    	  <td>22/05/2012</td>
+    	  <td>
+    	  		<button type="button" class="btn approved-btn" >Approved</button>
+    	  		<button type="button" class="btn rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+    	<tr id="row3">
+    	  <td scope="row">5</td>
+    	  <td>Apurva</td>
+    	  <td>Noida</td>
+    	  <td>07/11/2017</td>
+    	  <td>
+    	  		<button type="button" class="btn approved-btn" >Approved</button>
+    	  		<button type="button" class="btn rejected-btn" >Rejected</button>
+    	  		<button type="button" class="btn incomplete-btn" >Incomplete</button>
+    	  </td>
+    	</tr>
+  	</tbody>
+	</table>
+</div>
+
+<div class="container">
+	<h1>Approved Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="approved">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Location</th>
+	   	   <th scope="col">Date</th>
+	   	</tr>
+	  </thead>
+	  	<tbody>
+    	
+  		</tbody>
+	</table>
+</div>
+<div class="container">
+	<h1>Rejected Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="rejected">
+	  <thead>
+	    <tr>
+	    <th scope="col">#</th>
+	    <th scope="col">Name</th>
+	    <th scope="col">Location</th>
+   	   <th scope="col">Date</th>
+	   	</tr>
+	  </thead>
+	  	<tbody>
+    
+  		</tbody>
+	</table>
+</div>
+
+
+<div class="container">
+	<h1>Incomplete Application</h1>
+	<table class="table table-striped table-dark table-bordered table-hover" id="incomplete">
+	  <thead>
+	    <tr>
+			<th scope="col">#</th>
+	    	<th scope="col">Name</th>
+	   	 	<th scope="col">Location</th>
+	   	   	<th scope="col">Date</th>
+	    </tr>
+	  </thead>
+	  	<tbody>
+
+    	</tbody>
+	</table>
+</div>
+
+</body>
+</html>
