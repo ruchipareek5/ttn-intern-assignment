@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>jQuery Assign*</title>
+    <link rel="icon" href="img/SCGJ.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+    <script type="application/javascript">
+
+        $(document).ready(
+            function(){
+                $("#accept1").click(function () {
+                    $("#1R td:eq(3)").hide()
+                    $(".approve").append("<tr>")
+                    $(".approve").append($("#1R td:lt(3)"))
+                    $(".approve").append("</tr>")
+                });
+                $("#reject1").click(function () {
+                    $("#1R td:eq(3)").hide()
+                    $(".reject").append("<tr>")
+                    $(".reject").append($("#1R td:lt(3)"))
+                    $(".reject").append("</tr>")
+                });
+                $("#Incomplete1").click(function () {
+                    $("#1R td:eq(3)").hide()
+                    $(".incomplete").append("<tr>")
+                    $(".incomplete").append($("#1R td:lt(3)"))
+                    $(".incomplete").append("</tr>")
+                });
+                $("#accept2").click(function () {
+                    $("#2R td:eq(3)").hide()
+                    $(".approve").append("<tr>")
+                    $(".approve").append($("#2R td:lt(3)"))
+                    $(".approve").append("</tr>")
+                });
+                $("#reject2").click(function () {
+                    $("#2R td:eq(3)").hide()
+                    $(".reject").append("<tr>")
+                    $(".reject").append($("#2R td:lt(3)"))
+                    $(".reject").append("</tr>")
+                });
+                $("#Incomplete2").click(function () {
+                    $("#2R td:eq(3)").hide()
+                    $(".incomplete").append("<tr>")
+                    $(".incomplete").append($("#2R td:lt(3)"))
+                    $(".incomplete").append("</tr>")
+                });
+                $("#accept3").click(function () {
+                    $("#3R td:eq(3)").hide()
+                    $(".approve").append("<tr>")
+                    $(".approve").append($("#3R td:lt(3)"))
+                    $(".approve").append("</tr>")
+                });
+                $("#reject3").click(function () {
+                    $("#3R td:eq(3)").hide()
+                    $(".reject").append("<tr>")
+                    $(".reject").append($("#3R td:lt(3)"))
+                    $(".reject").append("</tr>")
+                });
+                $("#Incomplete3").click(function () {
+                    $("#3R td:eq(3)").hide()
+                    $(".incomplete").append("<tr>")
+                    $(".incomplete").append($("#3R td:lt(3)"))
+                    $(".incomplete").append("</tr>")
+                });
+
+            }
+        );
+
+
+    </script>
+</head>
+
+<body>
+<h3>Submitted Applications</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">QP</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ID="1R">
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>2</td>
+        <td width="300px">
+            <button id="accept1">Approve</button>
+            <button id="reject1">Reject</button>
+            <button id="Incomplete1">Incomplete</button>
+        </td>
+    </tr>
+    <tr ID="2R">
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>1</td>
+        <td width="300px">
+            <button id="accept2">Approve</button>
+            <button id="reject2">Reject</button>
+            <button id="Incomplete2">Incomplete</button>
+        </td>
+    </tr>
+    <tr ID="3R">
+        <td>Larry</td>
+        <td>The Bird</td>
+        <td>6</td>
+        <td width="300px">
+            <button id="accept3">Approve</button>
+            <button id="reject3">Reject</button>
+            <button id="Incomplete3">Incomplete</button>
+        </td>
+    </tr>
+    </tbody>
+</table><br>
+
+<h3>Approved Applications</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">QP</th>
+    </tr>
+    </thead>
+    <tbody class="approve">
+
+
+    </tbody>
+</table><br>
+
+<h3>Rejected Applications</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">QP</th>
+    </tr>
+    </thead>
+    <tbody class="reject">
+
+    </tbody>
+</table><br>
+
+<h3>Incomplete Applications</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">QP</th>
+    </tr>
+    </thead>
+    <tbody class="incomplete">
+
+    </tbody>
+</table>
+
+</body>
+
+</html>
