@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SB Admin - Start Bootstrap Template</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/sb-admin.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- Custom styles for this template-->
+       <script>
+ 		$(document).ready(function(){
+  			$(".approved-btn").click(function(){
+  				alert("Application is approved.");
+  				$(this).parents("tr").hide();
+//  				$('#approved > tbody:last-child').append($(this).parents("tr").get()).show();
+//  				$(this).parents("td").hide();
+//  				$(this).parents("tr").show();
+                
+            
+            });
+  			$(".rejected-btn").click(function(){
+  				alert("Application is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#rejected > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".incomplete-btn").click(function(){
+  				alert("Application is modified");
+  				$(this).parents("tr").hide();
+  				$('#incomplete > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  		});
+    </script>
+</head>
+
+<body>
+    <div class="row " style="padding:40px">
+        <div class="col-md-6" >
+            <center><strong> <caption><h2><u>List of Submitted applications</u></h2></caption></strong> </center>
+           <table class="table table-bordered table-hover" style=" padding:40px " id="Submitted">
+              <thead class="thead-dark ">
+                <tr >
+                  <th scope="col"></th>
+                  <th scope="col">App_no</th>
+                  <th scope="col">App_name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="row1">
+                  <th scope="row"><input type="checkbox" name="check1"></th>
+                  <td>1</td>
+                  <td>Otto</td>
+                </tr>
+                <tr id="row2">
+                  <th scope="row"><input type="checkbox" name="check2"></th>
+                  <td>2</td>
+                  <td>Thornton</td>
+                </tr>
+                <tr id="row3">
+                  <th scope="row"><input type="checkbox" name="check3"></th>
+                  <td>3</td>
+                  <td>the Bird</td>
+                </tr>
+              </tbody>
+            </table>
+            <center>
+            <button type="button" class="btn btn-primary approved-btn">Reject</button>
+            <button type="button" class="btn btn-primary rejected-btn">Modification</button>
+            <button type="button" class="btn btn-success incomplete-btn">Approved</button>
+            </center>
+        </div >   
+       <div class="col-md-6" >
+            <center><strong> <caption><h2><u>Incomplete applications</u></h2></caption></strong> </center>
+           <table class="table table-bordered table-hover" style=" padding:40px" id="incomplete">
+              <thead class="thead-dark ">
+                <tr >
+                  <th scope="col"></th>
+                  <th scope="col">App_no</th>
+                  <th scope="col">App_name</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+        </div >   
+       <div class="col-md-6" >
+            <center><strong> <caption><h2><u>Approved applications</u></h2></caption></strong> </center>
+           <table class="table table-bordered table-hover" style=" padding:40px" id="approved">
+              <thead class="thead-dark ">
+                <tr >
+                  <th scope="col"></th>
+                  <th scope="col">App_no</th>
+                  <th scope="col">App_name</th>
+                </tr>
+              </thead>
+              <tbody>
+ 
+              </tbody>
+            </table>
+        </div >   
+       <div class="col-md-6" >
+            <center><strong> <caption><h2><u>Rejected applications</u></h2></caption></strong> </center>
+           <table class="table table-bordered table-hover" style=" padding:40px" id="rejected">
+              <thead class="thead-dark ">
+                <tr >
+                  <th scope="col"></th>
+                  <th scope="col">App_no</th>
+                  <th scope="col">App_name</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+        </div >   
+         
+        
+        
+        
+    </div>
+
+</body>
+
+</html>
