@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			  	$('.approveClicked').click(function() {
+			    $(this).parent().parent().clone().appendTo('#Approvedtable ').children().children('.remove').remove();
+			  });
+			  	$('.rejectedClicked').click(function() {
+			    $(this).parent().parent().clone().appendTo('#Rejectedtable ').children().children('.remove').remove();
+			  });
+			  	$('.modifyClicked').click(function() {
+			    $(this).parent().parent().clone().appendTo('#Modificationtable ').children().children('.remove').remove();
+			  });
+			});
+	</script>
+</head>
+<body style="background-color: lavender">
+	<h3>SUBMITTED APPLICATION</h3>
+	<table id="main">
+		<thead style="background-color:turquoise">
+			<tr>
+							<th>Batch Id</th>
+						      <th>Batch Name</th>
+						      <th>Start Date</th>
+						      <th>End Date</th>
+						      <th>Status</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <td class="one" th.field="*{BatchId}">121</td>
+						      <td class="one" th.field="*{BatchName}">CS BATCH</td>
+						      <td class="one" th.field="*{StartDate}">12/06/2018</td>
+						      <td class="one" th.field="*{EndDate}">17/07/2018</td>
+						      <td>
+						      	<button action="#" th.action="@{/approved}" th.object="${application}" method="post" class="remove approveClicked" type="submit" value="submit">Approved</button>
+						      	<button class="remove rejectedClicked">Rejected</button>
+						      	<button class="remove modifyClicked">Modification</button>
+						      </td>
+
+						    </tr>
+						    <tr>
+						      <td class="one">666</td>
+						      <td class="one" >xyz BATCH</td>
+						      <td class="one" >12/06/2018</td>
+						      <td class="one" >17/07/2018</td>
+						      <td>
+						      	<button class="remove approveClicked">Approved</button>
+						      	<button class="remove rejectedClicked">Rejected</button>
+						      	<button class="remove modifyClicked">Modification</button>
+						      </td>
+
+						    </tr>
+						    <tr>
+						      <td class="one">44</td>
+						      <td class="one" >d BATCH</td>
+						      <td class="one" >12/06/2018</td>
+						      <td class="one" >17/07/2018</td>
+						      <td>
+						      	<button class="remove approveClicked">Approved</button>
+						      	<button class="remove rejectedClicked">Rejected</button>
+						      	<button class="remove modifyClicked">Modification</button>
+						      </td>
+
+						    </tr>
+						    <tr>
+						      <td class="one">0009</td>
+						      <td class="one" >c BATCH</td>
+						      <td class="one" >12/06/2018</td>
+						      <td class="one" >17/07/2018</td>
+						      <td>
+						      	<button class="remove approveClicked">Approved</button>
+						      	<button class="remove rejectedClicked">Rejected</button>
+						      	<button class="remove modifyClicked">Modification</button>
+						      </td>
+
+						    </tr>
+						    <tr>
+						      <td class="one">012</td>
+						      <td class="one" >b BATCH</td>
+						      <td class="one" >12/06/2018</td>
+						      <td class="one" >17/07/2018</td>
+						      <td>
+						      	<button class="remove approveClicked">Approved</button>
+						      	<button class="remove rejectedClicked">Rejected</button>
+						      	<button class="remove modifyClicked">Modification</button>
+						      </td>
+
+						    </tr>
+						    <tr>
+						      <td class="one">678</td>
+						      <td class="one" >a BATCH</td>
+						      <td class="one" >12/06/2018</td>
+						      <td class="one" >17/07/2018</td>
+						      <td>
+						      	<button class="remove approveClicked">Approved</button>
+						      	<button class="remove rejectedClicked">Rejected</button>
+						      	<button class="remove modifyClicked">Modification</button>
+						      </td>
+
+						    </tr>
+						  </tbody>
+						</table>
+<H3>APPROVED APPLICATION</H3>
+		<table id="Approvedtable">
+						  <thead style="background-color:turquoise">
+						    <tr>
+						      <th >Batch Id</th>
+						      <th >Batch Name</th>
+						      <th >Start Date</th>
+						      <th >End Date</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    
+						  </tbody>
+		</table>			
+<H3>REJECTED APPLICATION</H3>
+		<table id="Rejectedtable">
+						  <thead style="background-color:turquoise">
+						    <tr>
+						      <th >Batch Id</th>
+						      <th >Batch Name</th>
+						      <th >Start Date</th>
+						      <th >End Date</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    
+						  </tbody>
+		</table>			
+<H3>INCOMPLETE APPLICATION</H3>
+		<table id="Modificationtable">
+						  <thead style="background-color:turquoise">
+						    <tr>
+						      <th >Batch Id</th>
+						      <th >Batch Name</th>
+						      <th >Start Date</th>
+						      <th >End Date</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    
+						  </tbody>
+		</table>									
+</body>
+</html>
