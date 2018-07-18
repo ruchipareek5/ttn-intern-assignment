@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+
+        #Submitted th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #3366ff;
+            color: white;
+        }
+        #approved th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        #rejected th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #e62e00;
+            color: white;
+        }
+        #incomplete th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            color: white;
+        }
+        #incomplete-btn{
+            color: black;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function(){
+            $(".approved-btn").click(function(){
+                alert("Assessment Agency is approved.");
+                var c = $(this);
+                var a = c.parents("tr");
+                var b = a.children(':first-child').text();
+                $.post("/approvedfunction",
+                    {
+                        id: b,
+                    },
+
+                    function(){
+                        c.parents("td").remove();
+                        a.remove();
+                        $('#approved > tbody:last-child').append(a.get()).show();
+                    });
+/*
+                $.ajax({url: "/approvedfunction",success: function(result){
+                        a.remove();
+                        $('#approved > tbody:last-child').append(a.get()).show();
+                        $(this).parents("td").hide();
+                        $(this).parents("tr").show();
+                    }});*/
+            });
+            $(".rejected-btn").click(function(){
+                alert("Assessment Agency is rejected.");
+                var c = $(this);
+                var a = c.parents("tr");
+                var b = a.children(':first-child').text();
+                $.post("/rejectedfunction",
+                    {
+                        id: b,
+                    },
+
+                    function(){
+                        c.parents("td").remove();
+                        a.remove();
+                        $('#rejected > tbody:last-child').append(a.get()).show();
+                    });
+                /*
+                $(this).parents("tr").hide();
+                $('#rejected > tbody:last-child').append($(this).parents("tr").get()).show();
+                $(this).parents("td").hide();
+                $(this).parents("tr").show();*/
+            });
+            $(".incomplete-btn").click(function(){
+                alert("Assessment Agency Application is incomplete.");
+                var c = $(this);
+                var a = c.parents("tr");
+                var b = a.children(':first-child').text();
+                $.post("/incompletefunction",
+                    {
+                        id: b,
+                    },
+
+                    function(){
+                        c.parents("td").remove();
+                        a.remove();
+                        $('#incomplete > tbody:last-child').append(a.get()).show();
+                    });
+                // $(this).parents("tr").hide();
+                // $('#incomplete > tbody:last-child').append($(this).parents("tr").get()).show();
+                // $(this).parents("td").hide();
+                // $(this).parents("tr").show();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Submitted Application</h1>
+    <table class="table table-striped table-dark table-bordered table-hover" id="Submitted">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Institution Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="row1">
+            <td scope="row">1</td>
+            <td>Marks and Spencer pvt ltd</td>
+            <td>Assessment Agency</td>
+            <td>28/8/2018</td>
+            <td>
+                <button type="button" class="btn btn-success approved-btn" >Approved</button>
+                <button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+                <button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+            </td>
+        </tr>
+
+        <tr id="row2">
+            <td scope="row">2</td>
+            <td>Shoppers Stop pvt ltd</td>
+            <td>Assessment Agency</td>
+            <td>23/10/2018</td>
+            <td>
+                <button type="button" class="btn btn-success approved-btn" >Approved</button>
+                <button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+                <button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+            </td>
+        </tr>
+
+        <tr id="row3">
+            <td scope="row">3</td>
+            <td>Delhi Central pvt ltd</td>
+            <td>Assessment Agency</td>
+            <td>29/7/2018</td>
+            <td>
+                <button type="button" class="btn btn-success approved-btn" >Approved</button>
+                <button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+                <button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+            </td>
+        </tr>
+
+
+        <tr id="row4">
+            <td scope="row">4</td>
+            <td>Big Bazar pvt ltd</td>
+            <td>Assessment Agency</td>
+            <td>2/4/2018</td>
+            <td>
+                <button type="button" class="btn btn-success approved-btn" >Approved</button>
+                <button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+                <button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+            </td>
+        </tr>
+        <tr id="row5">
+            <td scope="row">5</td>
+            <td>UCB pvt ltd</td>
+            <td>Assessment Agency</td>
+            <td>27/1/2017</td>
+            <td>
+                <button type="button" class="btn btn-success approved-btn" >Approved</button>
+                <button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+                <button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+            </td>
+        </tr>
+        <tr id="row6">
+            <td scope="row">6</td>
+            <td>Pantaloons pvt ltd</td>
+            <td>Assessment Agency</td>
+            <td>29/7/2018</td>
+            <td>
+                <button type="button" class="btn btn-success approved-btn" >Approved</button>
+                <button type="button" class="btn btn-danger rejected-btn" >Rejected</button>
+                <button type="button" class="btn btn-dark incomplete-btn" >Incomplete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h1>Approved Application</h1>
+    <table class="table table-striped table-dark table-bordered table-hover" id="approved">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Institution Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <h1>Rejected Application</h1>
+    <table class="table table-striped table-dark table-bordered table-hover" id="rejected">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Institution Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <h1>Incomplete Application</h1>
+    <table class="table table-striped table-dark table-bordered table-hover" id="incomplete">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Institution Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
