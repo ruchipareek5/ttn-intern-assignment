@@ -15,56 +15,56 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#approve').click(function(){
-		$('#sub').find('tr').each(function(index,value,array){			
-                $.post("/approvedfunction",
-                    {
-                        id: b,
-                    });		
+		$('#sub').find('tr').each(function(index,value,array){		
+			function ajax(){
+				$ajax({url:'assignmentAJAX.html',id:a,
+				success:function(data){
 			if($(this).find('input[type="checkbox"]').is(':checked')){
 			
 			$('<tr>').append($('>:gt(1)',this))
 			$('#app').append(value);
 			
+			}}
+			});
 			}
-	       $.post("/approvedfunction",
-              {
-                  id: b,
-              });
+	      
 		});
 		
 		});
 		
 		$('#reject').click(function(){
 		 $('#sub').find('tr').each(function(index,value,array){
-		
-			if($(this).find('input[type="checkbox"]').is(':checked')){
+			
+		function ajax(){
+			$ajax({
+				@url:'assignmentAJAX.html',id:b,
+				success:function(data){
+				if($(this).find('input[type="checkbox"]').is(':checked')){
 				$('<tr>').append($('>:gt(1)',this))
 				$('#rej').append(value);
+			}}
+			});
 			}
-		 $.post("/rejectedfunction",
-                    {
-                        id: b,
-                    });
+				
 		});
-		
 		});
 		
 		$('#modify').click(function(){
-		$('#sub').find('tr').each(function(index,value,array){
-		
-			if($(this).find('input[type="checkbox"]').is(':checked')){
+		 $('#sub').find('tr').each(function(index,value,array){
+			
+		function ajax(){
+			$ajax({
+				@url:'assignmentAJAX.html',id:c,
+				success:function(data){
+				if($(this).find('input[type="checkbox"]').is(':checked')){
 				$('<tr>').append($('>:gt(1)',this))
 				$('#mod').append(value);
+			}}
+			});
 			}
-		 $.post("/incompletefunction",
-                    {
-                        id: b,
-                    });
-			
+				
 		});
-		
 		});
-	});
 </script>
 
 </head>
