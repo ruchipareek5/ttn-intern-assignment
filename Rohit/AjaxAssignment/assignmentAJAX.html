@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#approve').click(function(){
+		$('#sub').find('tr').each(function(index,value,array){		
+			function ajax(){
+				$ajax({url:'assignmentAJAX.html',id:a,
+				success:function(data){
+			if($(this).find('input[type="checkbox"]').is(':checked')){
+			
+			$('<tr>').append($('>:gt(1)',this))
+			$('#app').append(value);
+			
+			}}
+			});
+			}
+	      
+		});
+		
+		});
+		
+		$('#reject').click(function(){
+		 $('#sub').find('tr').each(function(index,value,array){
+			
+		function ajax(){
+			$ajax({
+				@url:'assignmentAJAX.html',id:b,
+				success:function(data){
+				if($(this).find('input[type="checkbox"]').is(':checked')){
+				$('<tr>').append($('>:gt(1)',this))
+				$('#rej').append(value);
+			}}
+			});
+			}
+				
+		});
+		});
+		
+		$('#modify').click(function(){
+		 $('#sub').find('tr').each(function(index,value,array){
+			
+		function ajax(){
+			$ajax({
+				@url:'assignmentAJAX.html',id:c,
+				success:function(data){
+				if($(this).find('input[type="checkbox"]').is(':checked')){
+				$('<tr>').append($('>:gt(1)',this))
+				$('#mod').append(value);
+			}}
+			});
+			}
+				
+		});
+		});
+</script>
+
+</head>
+<body>
+
+<form>
+<table style="width:60%" id="sub">
+  <caption style="border: 2px solid back;">Submitted Application</caption>
+  <tr>
+    <th>ID</th>
+	<th>NAME</th>
+	<th width=20px>CHOOSE</th>
+    
+  </tr>
+  <tr>
+    <th>101</th>
+	<td>Rohit</td>
+    <td> <input type="checkbox" name="check" value="101"></td>
+	
+  </tr>
+  <tr>
+    
+    <th>102</th>
+	<td>Akash</td>
+	<td> <input type="checkbox" name="check" value="102"></td>
+  </tr>
+	<tr>
+    <th>103</th>
+    <td>Deepak</td>
+	<td> <input type="checkbox" name="check" value="103"></td>
+  </tr>
+	<tr>
+    <th>104</th>
+    <td>yatin</td>
+	<td> <input type="checkbox" name="check" value="104"></td>
+  </tr>
+
+  </table>
+</form>
+</br>
+</br>
+</br>
+  
+  <table style="width:60%" id="app">
+  <caption style="border: 2px solid back;">Approved Application</caption>
+  
+  <tr>
+    <th>Id</th>
+	<th>Name</th>
+  </tr>
+  
+  </table>
+</br>
+</br>
+</br>
+  
+  <table style="width:60%" id="rej">
+  <caption style="border: 2px solid back;">Rejected Application</caption>
+  
+  <tr>
+    <th>Id</th>
+	<th>Name</th>
+  </tr>
+  
+  </table>
+  </br>
+  </br>
+  </br>
+  <table style="width:60%"id="mod">
+  <caption style="border: 2px solid back;">Incompelete Application</caption>
+  
+  <tr>
+    <th>Id</th>
+	<th>Name</th>
+  </tr>
+  
+  </table>
+  </br>
+  </br>
+  </br>
+  <button type="button" id="approve"> Approve</button>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <button type="button" id="reject"> Rejected</button>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <button type="button" id="modify">Modification</button>
+   
+</body>
+</html>
